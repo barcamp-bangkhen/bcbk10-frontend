@@ -1,7 +1,9 @@
-import Meta from 'core/components/Meta'
+import React from 'react';
+
+import Meta from 'core/components/Meta';
 
 export default function createMeta() {
-  const title = 'Home BCBK 2020'
+  const title = 'Home BCBK 2020';
 
-  return <Meta title={title} />
+  return <Meta title={title} />;
 }

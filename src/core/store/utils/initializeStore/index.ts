@@ -1,21 +1,22 @@
-import { enableStaticRendering } from 'mobx-react'
-import stores from 'stores'
+import { enableStaticRendering } from 'mobx-react';
 
-const isServer = typeof window === 'undefined'
+import stores from 'stores';
 
-enableStaticRendering(isServer)
+const isServer = typeof window === 'undefined';
+
+enableStaticRendering(isServer);
 
 export default function initializeStore(
   defaultStore: Record<string, any> = null
 ) {
-  let initStore = defaultStore
+  let initStore = defaultStore;
 
   if (isServer) {
-    return stores
+    return stores;
   }
   if (stores === null) {
-    initStore = stores
+    initStore = stores;
   }
 
-  return initStore
+  return initStore;
 }

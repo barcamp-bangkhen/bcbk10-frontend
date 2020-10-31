@@ -1,29 +1,27 @@
-const typescriptConfig = require('./.eslintrc.typescript.js');
-
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
+  files: ['*.ts', '*.tsx'],
+  plugins: ['@typescript-eslint', 'react', 'jest', 'unused-imports'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
+    project: ['./tsconfig.json'],
+  },
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
   },
-  plugins: ['react', 'jest', 'react-hooks'],
   env: {
-    browser: true,
-    node: true,
-    commonjs: true,
-    es6: true,
-    'jest/globals': true,
     jest: true,
   },
-  globals: {
-    __DEV__: true,
-  },
-  extends: 'airbnb',
-  overrides: [typescriptConfig],
+  extends: [
+    'airbnb',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+  ],
   rules: {
     // Disable Eslint rules that conflict to Prettier
     semi: 'off',
@@ -32,7 +30,7 @@ module.exports = {
     'comma-dangle': 'off',
     indent: 'off',
 
-    'no-unused-vars': [2, { args: 'none' }],
+    'no-unused-vars': 'off', // used '@typescript-eslint/no-unused-vars' instead
     'dot-notation': [0], // must do because of immutable migration
     'space-before-function-paren': [0],
     'no-underscore-dangle': [0], // _ before action name in actions.js
@@ -79,6 +77,33 @@ module.exports = {
     'semi-style': [0],
     'no-extra-semi': [0],
     'generator-star-spacing': [0],
+    'prefer-arrow-callback': [0],
+    'arrow-body-style': [0],
+    'no-lonely-if': 'off',
+    'no-else-return': 'off',
+
+    // typescript
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/restrict-plus-operands': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
+    '@typescript-eslint/unbound-method': 'off',
+    '@typescript-eslint/no-useless-constructor': 'error',
+    '@typescript-eslint/no-misused-promises': 'off', // drain performance
+    '@typescript-eslint/await-thenable': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/prefer-regexp-exec': 'off',
+    '@typescript-eslint/no-unused-expressions': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
+    '@typescript-eslint/require-await': 'off',
 
     // react
     'react/prop-types': [0], // fiexd by flow
@@ -95,18 +120,12 @@ module.exports = {
     'react/no-unescaped-entities': [1], // text in html element eg. -> <span className={s.spanText}>OWNER'S MESSAGE</span>
     'react/no-array-index-key': [0], // cannot use key={index of array}
     'react/jsx-key': [2], // requires key prop for react element in a collection
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    ],
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
     'react/jsx-indent': [0, 'tab'], // after git commit it failed
     'react/jsx-indent-props': [2, 'tab'],
     'react/jsx-closing-tag-location': [0], // can fix by --fix but after git commit it failed
     'react/no-unused-state': [1],
     'react/no-unused-prop-types': [1],
-    'react/react-in-jsx-scope': [0],
     'react/sort-comp': [
       2,
       {
@@ -129,16 +148,57 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/jsx-curly-brace-presence': 'off',
+    'react/no-danger': 'off',
+    'react/jsx-boolean-value': 'off',
 
     // import
+    'import/no-duplicates': [0], // drain performance
     'import/no-extraneous-dependencies': [0], // Forbid the import of external modules that are not declared in the package.json's dependencies, devDependencies, optionalDependencies or peerDependencies.
-    'import/first': [0], // imports that come after non-import statements.
     'import/no-unresolved': [0],
     'import/extensions': [0],
     'import/prefer-default-export': [0],
+    'import/first': [0], // imports that come after non-import statements.
     'import/no-mutable-exports': [0], // Forbids the use of mutable exports with var or let
     'import/no-dynamic-require': [0],
+    'import/no-named-as-default': 'off',
+    'import/no-named-as-default-member': 'off',
+    'no-restricted-imports': [
+      'warn',
+      {
+        paths: [
+          {
+            name: '@wongnai/analytics/promise',
+            message: 'Please use common/lib/WongnaiAnalytics instead.',
+          },
+          {
+            name: '@wongnai/ui/styles/mixins/size',
+            importNames: ['fontSizes', 'lineHeights'],
+            message:
+              "Please import { fontSizes, lineHeights } from '@wongnai/ui/styles/typography' instead.",
+          },
+          {
+            name: '@wongnai/ui/styles/mixins/fontStyle',
+            importNames: ['fontWeight'],
+            message:
+              "Please import { fontWeight } from '@wongnai/ui/styles/typography' instead.",
+          },
+          {
+            name: '@wongnai/ui/styles/mixins',
+            importNames: ['fontWeight, fontSizes, lineHeights'],
+            message:
+              "Please import { fontWeight, fontSizes, lineHeights } from '@wongnai/ui/styles/typography' instead.",
+          },
+          {
+            name: 'common/styles/*',
+            message: 'Please import styles from wongnai-ui instead.',
+          },
+        ],
+      },
+    ],
     'import/order': [
       'error',
       {
@@ -147,6 +207,11 @@ module.exports = {
             pattern: 'react',
             group: 'external',
             position: 'before',
+          },
+          {
+            pattern: '@wongnai/**',
+            group: 'external',
+            position: 'after',
           },
           {
             pattern: 'core/**',
@@ -192,16 +257,5 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': [1],
     'jsx-a11y/label-has-for': [0], // This rule was deprecated in v6.1.0. It will no longer be maintained. Use label-has-associated-control instead.
     'jsx-a11y/no-autofocus': [0],
-
-    // test
-    'jest/no-disabled-tests': 'warn',
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/prefer-to-have-length': 'warn',
-    'jest/valid-expect': 'error',
-
-    // bug
-    'template-curly-spacing': [0],
-    'jsx-a11y/heading-has-content': [0],
   },
 };

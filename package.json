@@ -8,7 +8,7 @@
     "start": "next start",
     "release": "standard-version --no-verify",
     "deploy": "yarn build && firebase deploy --only hosting && npm --prefix ./functions run deploy",
-    "lint": "eslint -c .eslintrc.js --ext .tsx,.ts,.js src pages",
+    "lint": "eslint --ext .tsx,.ts,.js src pages",
     "lint:fix": "eslint --ext .tsx,.ts,.js src pages --fix"
   },
   "dependencies": {
@@ -58,6 +58,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unused-imports": "^1.0.0",
     "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
     "prettier": "^2.1.2"
   }
 }
