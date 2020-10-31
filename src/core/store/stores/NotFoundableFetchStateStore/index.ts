@@ -1,6 +1,7 @@
-import FetchStateStore from 'core/store/stores/FetchStateStore'
-import { action, computed } from 'mobx'
 import { get } from 'lodash'
+import { action, computed } from 'mobx'
+
+import FetchStateStore from 'core/store/stores/FetchStateStore'
 
 class NotFoundableFetchStateStore extends FetchStateStore {
   @action

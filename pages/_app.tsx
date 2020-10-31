@@ -5,6 +5,9 @@ import { NextSeo } from 'next-seo'
 import App, { AppContext, AppProps } from 'next/app'
 
 import RootLayout from 'core/components/RootLayout'
+import { DEFAULT_LOCALE, STORAGE_LOCALE_KEY } from 'core/i18n/constants'
+import useSetLocale from 'core/i18n/hooks/useSetLocale'
+import getLocalStorage from 'core/localStorage/getLocalStorage'
 import initializeStore from 'core/store/utils/initializeStore'
 
 interface Props {
@@ -12,10 +15,11 @@ interface Props {
 }
 
 const MyApp = ({ Component, pageProps, stores }: AppProps & Props) => {
+  const setLocale = useSetLocale()
+
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side')
-    if (jssStyles && jssStyles.parentNode)
-      jssStyles.parentNode.removeChild(jssStyles)
+    if (jssStyles && jssStyles.parentNode) jssStyles.parentNode.removeChild(jssStyles)
   }, [])
 
   const mobxStores = useMemo(() => {
@@ -23,6 +27,18 @@ const MyApp = ({ Component, pageProps, stores }: AppProps & Props) => {
 
     return isServer ? stores : initializeStore(stores)
   }, [])
+
+  const locale = useMemo(() => {
+    const isServer = typeof window === 'undefined'
+
+    return isServer
+      ? DEFAULT_LOCALE
+      : getLocalStorage(STORAGE_LOCALE_KEY) || DEFAULT_LOCALE
+  }, [])
+
+  useEffect(() => {
+    setLocale(locale)
+  }, [locale])
 
   return (
     <Provider {...mobxStores}>

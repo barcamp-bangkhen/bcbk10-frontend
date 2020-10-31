@@ -1,5 +1,7 @@
 import { css } from 'styled-components'
+
 import getColorWithAlpha from 'common/styles/utils/getColorWithAlpha'
+
 import { black } from '../colors'
 
 export const shadow = css`

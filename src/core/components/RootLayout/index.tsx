@@ -1,7 +1,9 @@
 import React, { ReactNode } from 'react'
+
 import Head from 'next/head'
-import NavigationBar from 'core/components/NavigationBar'
 import { createGlobalStyle } from 'styled-components'
+
+import NavigationBar from 'core/components/NavigationBar'
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -21,20 +23,19 @@ type Props = {
   children: ReactNode
 }
 
-const RootLayout = ({ children }: Props) => {
-  return (
+const RootLayout = ({ children }: Props) => (
     <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
         <meta name="robots" content="noindex" />
         <meta
-          name="google-site-verification"
-          content="btDCfTsvIv3g8wszlYI_tql1hYf592bDjLWsfUS2lUY"
+	name="google-site-verification"
+	content="btDCfTsvIv3g8wszlYI_tql1hYf592bDjLWsfUS2lUY"
         />
         <link
-          href="https://fonts.googleapis.com/css?family=Kanit|Roboto&display=swap"
-          rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Kanit|Roboto&display=swap"
+	rel="stylesheet"
         />
         <title>Barcamp Bangkhen</title>
         <link rel="manifest" href="/manifest.json" />
@@ -45,6 +46,5 @@ const RootLayout = ({ children }: Props) => {
       {children}
     </div>
   )
-}
 
 export default RootLayout

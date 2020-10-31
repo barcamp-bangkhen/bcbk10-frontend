@@ -1,20 +1,25 @@
 import React, { useCallback } from 'react'
+
 import Link from 'next/link'
-import { NavContainer, NavWrapper } from './styled'
+
+import useSetLocale from 'core/i18n/hooks/useSetLocale'
+import { Locale } from 'core/i18n/types'
+
 import Gap from 'common/components/Gap'
-import useChangeLocale from 'core/i18n/hooks/useChangeLocale'
 import Text from 'common/components/Text'
 import { gray } from 'common/styles/colors'
 
+import { NavContainer, NavWrapper } from './styled'
+
 const NavigationBar = () => {
-  const { setLocale } = useChangeLocale()
+  const setLocale = useSetLocale()
 
   const setLocaleTH = useCallback(() => {
-    setLocale('th')
+    setLocale(Locale.th)
   }, [setLocale])
 
   const setLocaleEN = useCallback(() => {
-    setLocale('en')
+    setLocale(Locale.en)
   }, [setLocale])
 
   return (

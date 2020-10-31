@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+firebase-debug.log
+ui-debug.log
+
+/next
+/public/_next

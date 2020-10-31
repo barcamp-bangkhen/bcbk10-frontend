@@ -1,5 +1,1 @@
-import dynamic from 'next/dynamic'
-
-const LazyHomePage = dynamic(() => import('./component'))
-
-export default LazyHomePage
+export { default } from 'modules/home/pages/HomePage'

@@ -1,5 +1,6 @@
-import FetchStateStore from 'core/store/stores/FetchStateStore'
 import { observable, action } from 'mobx'
+
+import FetchStateStore from 'core/store/stores/FetchStateStore'
 
 class ModalStore extends FetchStateStore {
   @observable

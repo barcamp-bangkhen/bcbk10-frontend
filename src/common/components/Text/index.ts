@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 import { TextProps } from './types'
 
 export const ellipsisText = (line: number) => css`
@@ -16,7 +17,7 @@ export const ellipsisText = (line: number) => css`
 		  `};
 `
 
-const Text = styled.span<TextProps>`
+const Text = styled.span < TextProps > `
 	${({
 		size,
 		weight,
@@ -35,57 +36,57 @@ const Text = styled.span<TextProps>`
 		wordBreak,
 	}: TextProps) => css`
 		word-break: ${wordBreak || 'initial'};
-		${size &&
-			css`
+		${size
+			&& css`
 				font-size: ${size};
 			`};
-		${weight &&
-			css`
+		${weight
+			&& css`
 				font-weight: ${weight};
 			`};
-		${margin &&
-			css`
+		${margin
+			&& css`
 				margin: ${margin};
 			`};
-		${padding &&
-			css`
+		${padding
+			&& css`
 				padding: ${padding};
 			`};
-		${family &&
-			css`
+		${family
+			&& css`
 				font-family: ${family};
 			`};
-		${decoration &&
-			css`
+		${decoration
+			&& css`
 				text-decoration: ${decoration};
 			`};
-		${color &&
-			css`
+		${color
+			&& css`
 				color: ${color};
 			`};
 		${ellipsis && ellipsisText(ellipsis)};
-		${lineHeight &&
-			css`
+		${lineHeight
+			&& css`
 				line-height: ${lineHeight};
 			`};
-		${wordWrap &&
-			css`
+		${wordWrap
+			&& css`
 				word-wrap: break-word;
 			`};
-		${onClick &&
-			css`
+		${onClick
+			&& css`
 				cursor: pointer;
 			`};
-		${transform &&
-			css`
+		${transform
+			&& css`
 				text-transform: ${transform};
 			`}
-		${whiteSpace &&
-			css`
+		${whiteSpace
+			&& css`
 				white-space: ${whiteSpace};
 			`};
-		${textAlign &&
-			css`
+		${textAlign
+			&& css`
 				text-align: ${textAlign};
 			`};
 	`};

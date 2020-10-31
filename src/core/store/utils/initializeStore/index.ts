@@ -1,5 +1,4 @@
 import { enableStaticRendering } from 'mobx-react'
-
 import stores from 'stores'
 
 const isServer = typeof window === 'undefined'

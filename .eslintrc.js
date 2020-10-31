@@ -95,7 +95,7 @@ module.exports = {
 		'react/jsx-filename-extension': [
 			1,
 			{
-				extensions: ['.js', '.jsx']
+				extensions: ['.js', '.jsx', '.ts', '.tsx']
 			}
 		],
 		'react/jsx-indent': [0, 'tab'], // after git commit it failed
@@ -103,6 +103,7 @@ module.exports = {
 		'react/jsx-closing-tag-location': [0], // can fix by --fix but after git commit it failed
 		'react/no-unused-state': [1],
 		'react/no-unused-prop-types': [1],
+		'react/react-in-jsx-scope': [0],
 		'react/sort-comp': [
 			2,
 			{
@@ -124,7 +125,7 @@ module.exports = {
 			}
 		],
 		'react-hooks/rules-of-hooks': 'error',
-		'react-hooks/exhaustive-deps': 'warn',
+		'react-hooks/exhaustive-deps': 'off',
 		'react/jsx-curly-brace-presence': 'off',
 
 		// import

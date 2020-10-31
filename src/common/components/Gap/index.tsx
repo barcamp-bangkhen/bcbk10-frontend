@@ -1,20 +1,21 @@
 import styled, { css } from 'styled-components'
+
 import { GapProps } from './types'
 
 export const positionCenter = ({ alignCenter, justifyCenter }: GapProps) => css`
-	${justifyCenter &&
-		css`
+	${justifyCenter
+		&& css`
 			justify-content: center;
 		`};
-	${alignCenter &&
-		css`
+	${alignCenter
+		&& css`
 			align-items: center;
 		`};
 `
 
 export const horizontalStyle = ({ responsive, size }: GapProps) => css`
-	${responsive &&
-		css`
+	${responsive
+		&& css`
 			width: 100%;
 		`};
 	> *:not(:last-child) {
@@ -24,8 +25,8 @@ export const horizontalStyle = ({ responsive, size }: GapProps) => css`
 
 export const verticalStyle = ({ responsive, size }: GapProps) => css`
 	flex-direction: column;
-	${responsive &&
-		css`
+	${responsive
+		&& css`
 			width: 100%;
 		`}
 	> *:not(:last-child) {
@@ -38,7 +39,7 @@ const STYLE_MAPPER = {
 	vertical: verticalStyle,
 }
 
-const Gap = styled.div<GapProps>`
+const Gap = styled.div < GapProps > `
 	display: flex;
 	flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
 	${({ type = 'horizontal' }) => STYLE_MAPPER[type]};
