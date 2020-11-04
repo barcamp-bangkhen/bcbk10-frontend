@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.0...v0.2.1) (2020-11-04)
+
+
+### Bug Fixes
+
+* downgrade engine for free ([16d0156](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/16d015649d567d969e0f96213a70032c47bba986))
+
 ## [0.2.0](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.1.1...v0.2.0) (2020-11-04)
 
 
