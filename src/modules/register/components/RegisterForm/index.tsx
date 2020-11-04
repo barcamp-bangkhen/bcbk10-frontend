@@ -145,7 +145,7 @@ const RegisterForm = () => {
             <Text as={"h1"} textAlign={"center"}>{I18n.t(FORM_TITLE)}</Text>
             <Stepper>
                 {steps.map((stepTitle) => {
-                    return <Step>{stepTitle}</Step>
+                    return <Step key={stepTitle}>{stepTitle}</Step>
                 })}
             </Stepper>
             <Form>
