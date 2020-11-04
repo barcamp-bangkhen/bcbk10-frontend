@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.1.1...v0.2.0) (2020-11-04)
+
+
+### Bug Fixes
+
+* update i18n domain ([7bf3bfc](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/7bf3bfc7d98e92f1281386cb4af4286fb5d1c797))
+
 ### 0.1.1 (2020-11-04)
 
 
