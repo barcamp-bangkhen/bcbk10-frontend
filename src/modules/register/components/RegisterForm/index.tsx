@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 import useI18n from 'core/i18n/hooks/useI18n'
 
 import {FORM_TITLE} from './locales'
 import Text from 'common/components/Text'
-import Flex from "../../../../common/components/Flex";
 import ContentContainer from 'common/components/ContentContainer';
 
 const Button = styled.button`
@@ -16,11 +15,16 @@ const Button = styled.button`
     background: transparent;
     border: 2px solid black;
     cursor: pointer;
-    float: right;
+    
     
     &:hover {
         background: black;
         color: white;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        width: 6rem;
+        text-align: center;
     }
 `;
 
@@ -37,16 +41,21 @@ const PreviousButton = styled(Button)`
     visibility: ${props => props.visibility};
 `;
 
+const SubmitButton = styled(Button)`
+    float: right;
+`;
+
 const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 60vw;
     border: 1px solid black;
     padding: 1rem 2rem;
     border-radius: 1rem;
     
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const FormControl = styled.div`
@@ -57,6 +66,12 @@ const FormControl = styled.div`
 
 const ButtonGroup = styled.div`
     padding: 1rem 2rem;
+    
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+    }
 `;
 
 const Stepper = styled.div`
@@ -93,12 +108,13 @@ const TextInput = styled.input.attrs({
 
 const Row = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
 `;
 
 const Col = styled.div`
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 `;
 
 const getSteps = () => {
@@ -143,12 +159,13 @@ const RegisterForm = () => {
                 {activeStep !== steps.length - 1 &&
                 <NextButton
                     type={'button'} onClick={() => setActiveStep(activeStep + 1)}
+                    hidden={activeStep === steps.length - 1}
                 >Next</NextButton>
                 }
                 {activeStep === steps.length - 1 &&
-                <Button
+                <SubmitButton
                     type={'button'}
-                >Register</Button>
+                >Register</SubmitButton>
                 }
             </ButtonGroup>
         </ContentContainer>
@@ -188,19 +205,58 @@ const UserInfo = () => {
 
 const Covid19 = () => {
     return (
-        <Text>Covid-19</Text>
+        <Row>
+            <Col>
+                <FormControl>
+                    <label>Test</label>
+                    <TextInput/>
+                </FormControl>
+                <FormControl>
+                    <label>Test</label>
+                    <TextInput/>
+                </FormControl>
+            </Col>
+            <Col>
+                <FormControl>
+                    <label>Test</label>
+                    <TextInput/>
+                </FormControl>
+                <FormControl>
+                    <label>Test</label>
+                    <TextInput/>
+                </FormControl>
+            </Col>
+        </Row>
     )
 }
 
 const EventInfo = () => {
     return (
-        <Text>Event Info</Text>
+        <Row>
+            <Col>
+                <FormControl>
+                    <label>Test</label>
+                    <TextInput/>
+                </FormControl>
+                <FormControl>
+                    <label>Test</label>
+                    <TextInput/>
+                </FormControl>
+            </Col>
+        </Row>
     )
 }
 
 const Confirmation = () => {
     return (
-        <Text>Confirmation</Text>
+        <Row>
+            <Col>
+                <FormControl>
+                    <label>Test</label>
+                    <TextInput/>
+                </FormControl>
+            </Col>
+        </Row>
     )
 }
 
