@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.1...v0.2.2) (2020-11-04)
+
+
+### Bug Fixes
+
+* migrate engine to nodejs 12 ([d042089](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/d0420898d9a968f2228d61228695d096cd0915fc))
+
 ### [0.2.1](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.0...v0.2.1) (2020-11-04)
 
 
