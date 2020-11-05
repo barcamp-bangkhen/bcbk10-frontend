@@ -2,7 +2,6 @@ import React, { useCallback } from 'react'
 
 import { CloseIcon, SideBarContainer, NavLink, SideBarMenu, Icon, Lang } from './styled'
 import Link from 'next/link'
-import Text from 'common/components/Text'
 import { Locale } from 'core/i18n/types';
 
 import useSetLocale from 'core/i18n/hooks/useSetLocale'
