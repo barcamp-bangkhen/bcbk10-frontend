@@ -2,8 +2,6 @@ import React from 'react'
 
 import Link from 'next/link'
 
-import useI18n from 'core/i18n/hooks/useI18n'
-
 import Gap from 'common/components/Gap'
 import FacebookIcon from 'common/components/icons/FacebookIcon'
 import InstagramIcon from 'common/components/icons/InstragramIcon'
@@ -11,7 +9,6 @@ import TwitterIcon from 'common/components/icons/TwitterIcon'
 
 import { FACEBOOK_URL, IG_URL, TWITTER_URL } from 'modules/home/constants'
 
-import { CONTACT_TITLE } from './locales'
 import Flex from 'common/components/Flex'
 
 const ICON_SIZE = 24

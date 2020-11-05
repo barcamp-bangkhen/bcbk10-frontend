@@ -1,12 +1,9 @@
 import React from 'react'
 
-import styled from 'styled-components'
-
-import { NAV_BAR_HEIGHT } from 'core/components/NavigationBar/styled'
 import useI18n from 'core/i18n/hooks/useI18n'
 
 import { EVENT_DETAIL_TITLE, EVENT_DETAIL, PARTICIPANT_TITLE, PARTICIPANTS_DETAIL, REASONS_TO_COME_TITLE, REASONS_TO_COME_DETAIL } from './locales'
-import Flex from 'common/components/Flex'
+// import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
 
 const EventDetail = () => {

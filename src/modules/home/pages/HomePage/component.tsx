@@ -6,7 +6,7 @@ import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
 import { blue } from 'common/styles/colors'
 
-import Contact from 'modules/home/components/Contact'
+
 import EventDetail from 'modules/home/components/EventDetail'
 import RegisterSection from 'modules/home/components/RegisterSection'
 import Sponsor from 'modules/home/components/Sponsor'
