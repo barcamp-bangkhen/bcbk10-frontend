@@ -1,4 +1,6 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
+
+import Link from 'next/link'
 
 import useSetLocale from 'core/i18n/hooks/useSetLocale'
 import { Locale } from 'core/i18n/types'
@@ -7,8 +9,7 @@ import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
 import { gray } from 'common/styles/colors'
 
-import { Bars, NavContainer, NavLink, NavWrapper } from './styled'
-import Link from 'next/link'
+import { Bars, NavContainer, NavLink, NavWrapper, NavLogo } from './styled'
 
 const NavigationBar = ({ toggle }: { toggle: any }) => {
 	const setLocale = useSetLocale()
@@ -24,6 +25,7 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 	return (
 		<NavWrapper justifyContent="center">
 			<NavContainer alignItems="center" justifyContent="space-between">
+				<NavLogo/>
 				<Bars onClick={toggle.toggle} />
 				<Gap size="4rem" alignCenter>
 					<Link href="/" passHref>

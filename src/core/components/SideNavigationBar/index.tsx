@@ -1,13 +1,14 @@
 import React, { useCallback } from 'react'
 
-import { CloseIcon, SideBarContainer, NavLink, SideBarMenu, Icon, Lang } from './styled'
+
 import Link from 'next/link'
-import { Locale } from 'core/i18n/types';
 
 import useSetLocale from 'core/i18n/hooks/useSetLocale'
+import { Locale } from 'core/i18n/types';
+
+import { CloseIcon, SideBarContainer, NavLink, SideBarMenu, Icon, Lang } from './styled'
 
 const SideNavigationBar = ({ toggle }: { toggle: any }) => {
-
   const setLocale = useSetLocale()
 
   const setLocaleTH = useCallback(() => {

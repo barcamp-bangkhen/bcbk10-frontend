@@ -1,8 +1,7 @@
+import { FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
 
 import Flex from 'common/components/Flex'
-
-import { FaBars } from 'react-icons/fa'
 
 export const NAV_BAR_HEIGHT = '64px'
 
@@ -14,13 +13,13 @@ export const NavContainer = styled(Flex)`
 export const NavWrapper = styled(Flex)`
 `
 
-export const NavLink = styled.a `
+export const NavLink = styled.a`
   color: #433f4f;
   &:hover {
     color: #da6353;
   } 
 `
-export const Bars = styled(FaBars) `
+export const Bars = styled(FaBars)`
     display: none;
     color: black;
 
@@ -33,4 +32,14 @@ export const Bars = styled(FaBars) `
     font-size: 1.8rem;
     cursor: pointer; 
   }
+`
+
+export const NavLogo = styled.div`
+	  display: inline;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transform: translate(-100%, 75%); 
+    font-size: 1.8rem;
+    cursor: pointer; 
 `
