@@ -43,12 +43,7 @@ const Gap = styled.div<GapProps>`
 	display: flex;
 	flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
 	${({ type = 'horizontal' }) => STYLE_MAPPER[type]};
-	${positionCenter}
-
-	@media screen and (max-width: 768px) {
-		display: none
-	}
-		
+	${positionCenter};
 `
 
 export default Gap

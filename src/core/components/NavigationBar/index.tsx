@@ -5,11 +5,10 @@ import Link from 'next/link'
 import useSetLocale from 'core/i18n/hooks/useSetLocale'
 import { Locale } from 'core/i18n/types'
 
-import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
 import { gray } from 'common/styles/colors'
 
-import { Bars, NavContainer, NavLink, NavWrapper, NavLogo } from './styled'
+import { Bars, NavContainer, NavLink, NavWrapper, NavLogo, Gaps } from './styled'
 
 const NavigationBar = ({ toggle }: { toggle: any }) => {
 	const setLocale = useSetLocale()
@@ -25,9 +24,9 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 	return (
 		<NavWrapper justifyContent="center">
 			<NavContainer alignItems="center" justifyContent="space-between">
-				<NavLogo/>
+				<NavLogo />
 				<Bars onClick={toggle.toggle} />
-				<Gap size="4rem" alignCenter>
+				<Gaps size="4rem" alignCenter>
 					<Link href="/" passHref>
 						<NavLink>Timetable</NavLink>
 					</Link>
@@ -37,20 +36,17 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 					<Link href="/" passHref>
 						<NavLink>FAQS</NavLink>
 					</Link>
-					<Link href="/" passHref>
-						<NavLink>Session</NavLink>
-					</Link>
 					<Link href="/register" passHref>
 						<NavLink>Register</NavLink>
 					</Link>
-				</Gap>
+				</Gaps>
 
 				<Text as="div" size="14px" color={gray[700]}>
-					<Gap size="4px" alignCenter>
+					<Gaps size="4px" alignCenter>
 						<Text onClick={setLocaleTH}>th</Text>
 						<div>|</div>
 						<Text onClick={setLocaleEN}>en</Text>
-					</Gap>
+					</Gaps>
 				</Text>
 			</NavContainer>
 		</NavWrapper>
