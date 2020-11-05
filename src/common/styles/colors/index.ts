@@ -9,3 +9,8 @@ export const gray = {
 
 export const black = '#333333'
 export const white = '#FFFFFF'
+
+export const red = '#ED5C4D'
+export const whiteC = '#F4E9DA'
+export const yellow = '#FBBE4B'
+export const blue = '#273253'
