@@ -10,6 +10,7 @@ const EventDetail = () => {
 	const I18n = useI18n()
 
 	return (
+		
 		<Gap size ='10ch' type='vertical'>
 
 			<div>			

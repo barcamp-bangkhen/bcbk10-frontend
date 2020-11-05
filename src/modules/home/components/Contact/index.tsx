@@ -11,6 +11,8 @@ import { FACEBOOK_URL, IG_URL, TWITTER_URL } from 'modules/home/constants'
 
 import Flex from 'common/components/Flex'
 
+import useI18n from 'core/i18n/hooks/useI18n'
+
 const ICON_SIZE = 24
 
 const Contact = () => {

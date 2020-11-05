@@ -17,7 +17,7 @@ import createMeta from './createMeta'
 const HomePage = () => (
 	<ContentContainer>
 		{createMeta()}
-		<Gap size="32px" type="vertical">
+		{/* <Gap size="32px" type="vertical"> */}
 			<Flex alignItems="center" justifyContent="center" direction="column">
 				<Text color={blue}>
 					<RegisterSection />
@@ -25,7 +25,7 @@ const HomePage = () => (
 				</Text>
 			</Flex>
 			<Sponsor />
-		</Gap>
+		{/* </Gap> */}
 
 		<Footer />
 	</ContentContainer>
