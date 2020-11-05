@@ -1,37 +1,32 @@
-export const EVENT_DETAIL_TITLE = ['รายละเอียดงาน', 'Event Detail']
+export const EVENT_DETAIL_TITLE = ['BARCAMP คืออะไร ?', 'WHAT IS BARCAMP']
 
-const detailThaiVer = `รอลิเอะ gypsum dolor sit mate, ad prompts feud gait, quid exercise emeritus bis e.
-Usu cu ores quid am, me rides sapper croquet ex. 
-Ed ea clit a elect ram referent,at diode imper diet enc. Me sumo unique argument um no. 
-Ea alien um accustoms quo,mod summon effendi it tied.Amalia id per in minimum facility, 
-quid facet modifier ea ma. Ea alien um accustomsquo, mod summon effendi it tied. Imus cause verier ea, 
-grace commode it tied. Idmes mover elect ram assertion has no. Ea elite ague disco bequeath eons. Miniminterpretations man en. 
-Me sumo unique argument um no. Erato dolor em omit tam quono, per leg ere argument um re.
-
-Est en aim occurrence persecute in, males deterministic e sea. Dissed unique philosophic pro at. Tiber bonobocommune re is, at maxim 
-proportionate cum. Medico serenity adolescences en est. Imus cause verier ea, gracecommode it tied. Risque croquet pro ea. 
-Ur es detract lenitive professed, place rat detract est ad. Portoserenity est it.Ermine squeal interpretative cu quo, est era fellas. 
-Vela id brute dolor um peen chum. Ad sit bemusescomplected, dolor em pertinacity dissenter est re. Ala emus no duo, obi verier ed an. Fabulous portiere cor rumpit cu tied,
- in enc more commode mandamus. Ed ea clit a elect ram referent, at diode imper diet enc.Requiem effendi an viz, sequel rill animal ea has, ad prob option integer ea.
-  Fabulous portiere cor rum pit cutied, in enc more commode mandamus. Ea usu stet alters. Um unique lenitive marquisette in, ram ilia omit tame.No grace descriptor per, passim qua we discern an sea. 
-  Dec ore offend it man re, est no dolor es explicate, redicta elect ram demo critic duo. I onset voluminous eons, pro mutate passim ex. Que tongue mutant at, peterchum asseverate en pro. 
-  Er rem homer mediocre ex duo, man cu sumo mails erred, sadhu legend usu at. Illusplenitude efficient ex me.
-  รอลิเอะ gypsum dolor sit mate, ad prompts feud gait, quid exercise emeritus bis e.
-Usu cu ores quid am, me rides sapper croquet ex. 
-
-Ed ea clit a elect ram referent,at diode imper diet enc. Me sumo unique argument um no. 
-Ea alien um accustoms quo,mod summon effendi it tied.Amalia id per in minimum facility, 
-quid facet modifier ea ma. Ea alien um accustomsquo, mod summon effendi it tied. Imus cause verier ea, 
-grace commode it tied. Idmes mover elect ram assertion has no. Ea elite ague disco bequeath eons. Miniminterpretations man en. 
-Me sumo unique argument um no. Erato dolor em omit tam quono, per leg ere argument um re.
+const detailThaiVer = `บาร์แคมป์เป็นงานที่จัดขึ้นเพื่อรวมกลุ่มผู้ที่สนใจแบ่งปันความรู้ ความคิด หรือประสบการณ์ต่าง ๆ 
+และเกิดการแลกเปลี่ยนข้อมูลระหว่างกัน งานนี้ไม่มีการกำหนดหัวข้อเอาไว้ล่วงหน้า หากแต่ผู้ร่วมงานทุกคนจะเป็นผู้กำหนดเรื่องที่อยากพูดหรืออยากฟังได้เอง
 `
 
-const detailEngVer = ` Loren gypsum dolor sit mate, ad prompts feud gait, quid exercise emeritus bis e.
-Usu cu ores quid am, me rides sapper croquet ex. 
-Ed ea clit a elect ram referent,at diode imper diet enc. Me sumo unique argument um no. 
-Ea alien um accustoms quo,mod summon effendi it tied.Amalia id per in minimum facility, 
-quid facet modifier ea ma. Ea alien um accustomsquo, mod summon effendi it tied. Imus cause verier ea, 
-grace commode it tied. Idmes mover elect ram assertion has no. Ea elite ague disco bequeath eons. Miniminterpretations man en. 
-Me sumo unique argument um no. Erato dolor em omit tam quono, per leg ere argument um re.`
+const detailEngVer = `BarCamp is an unconference event that assembles people who want to share knowledge, thoughts, experiences, 
+or stories to other participants. This event has no definite sessions as everyone can choose topics they want to participate in.`
 
+export const  PARTICIPANT_TITLE = ['การมีส่วนร่วม', 'PARTICIPANTS']
+
+const participantThaiVer = `สำหรับบาร์แคมป์บางเขน ไม่ว่าคุณจะเป็นใคร เรียนที่ไหน หรือทำงานอะไร ก็สามารถร่วมแบ่งปันไอเดียหรือเรื่องราวดี ๆ ได้ทั้งนั้น
+`
+
+const participantsEngVer=`Everyone! Participants like you are essential to our event.
+`
+
+export const REASONS_TO_COME_TITLE =['ทำไมถึงต้องมา ? ', 'REASONS TO COME']
+
+const reasonsToComeThaiVer =`งานของเราเปิดกว้างอย่างไร้ขีดจำกัด หากคุณมีเรื่องราวน่าสนใจที่อยากบอกต่อ 
+คุณก็สามารถนำเสนอหัวข้อได้อย่างอิสระ แม้คุณไม่สามารถคิดหัวข้อได้ขณะนั้น คุณก็สามารถเลือกฟังหัวข้อของผู้อื่น 
+แล้วเข้าไปร่วมพูดคุยได้เช่นกัน และนี่คือเหตุผลที่คุณควรมาบาร์แคมป์
+  
+`
+const reasonsToComeEngVer =`We widely accept any topics for the presentation in sessions, without scope and limitation.
+If you have interesting stories and want to forward, talk about or share with others, you will be able to present your topic freely. 
+Even if you have no idea about what to talk about, you can join other sessions and exchange your ideas as well. 
+Our past sessions have many varieties, such as technology, food, sport, travel, business, photography and more!
+`
 export const EVENT_DETAIL = [detailThaiVer, detailEngVer]
+export const PARTICIPANTS_DETAIL = [participantThaiVer, participantsEngVer]
+export const REASONS_TO_COME_DETAIL = [reasonsToComeThaiVer, reasonsToComeEngVer]

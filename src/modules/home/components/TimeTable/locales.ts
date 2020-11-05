@@ -10,4 +10,4 @@ export const tableHeader = [
 ]
 export const timeDuration = ['08:00 - 10:00 ', '10:30 - 12:00 ', '15:00 - 18:00']
 export const ACTIVITIES = [morning, noon, evening]
-export const names = ['Jake', 'Jon', 'Thruster']
+

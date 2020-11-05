@@ -10,7 +10,7 @@ import Contact from 'modules/home/components/Contact'
 import EventDetail from 'modules/home/components/EventDetail'
 import RegisterSection from 'modules/home/components/RegisterSection'
 import Sponsor from 'modules/home/components/Sponsor'
-import TimeTable from 'modules/home/components/TimeTable'
+import Footer from 'modules/home/components/Footer'
 
 import createMeta from './createMeta'
 
@@ -22,12 +22,12 @@ const HomePage = () => (
 				<Text color={blue}>
 					<RegisterSection />
 					<EventDetail />
-					<TimeTable />
 				</Text>
 			</Flex>
-			<Contact />
 			<Sponsor />
 		</Gap>
+
+		<Footer />
 	</ContentContainer>
 )
 

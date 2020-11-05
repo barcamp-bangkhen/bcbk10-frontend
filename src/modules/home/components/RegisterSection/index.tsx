@@ -8,7 +8,6 @@ import { Container } from './styled'
 const RegisterSection = () => (
 	<Container>
 		<Flex alignItems="center" justifyContent="center" direction="column">
-			RegisterSection
 			<Button>Register</Button>
 		</Flex>
 	</Container>

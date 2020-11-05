@@ -9,36 +9,52 @@ import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
 import { gray } from 'common/styles/colors'
 
-import { NavContainer, NavWrapper } from './styled'
+import { Bars, NavContainer, NavLink, NavWrapper, NavLogo } from './styled'
 
-const NavigationBar = () => {
-  const setLocale = useSetLocale()
+const NavigationBar = ({ toggle }: { toggle: any }) => {
+	const setLocale = useSetLocale()
 
-  const setLocaleTH = useCallback(() => {
-    setLocale(Locale.th)
-  }, [setLocale])
+	const setLocaleTH = useCallback(() => {
+		setLocale(Locale.th)
+	}, [setLocale])
 
-  const setLocaleEN = useCallback(() => {
-    setLocale(Locale.en)
-  }, [setLocale])
+	const setLocaleEN = useCallback(() => {
+		setLocale(Locale.en)
+	}, [setLocale])
 
-  return (
-    <NavWrapper justifyContent="center">
-      <NavContainer alignItems="center" justifyContent="space-between">
-        <Gap size="16px" alignCenter>
-          <Link href="/">Home</Link>
-          <Link href="/register">Register</Link>
-        </Gap>
-        <Text as="div" size="14px" color={gray[700]}>
-          <Gap size="4px" alignCenter>
-            <Text onClick={setLocaleTH}>th</Text>
-            <div>|</div>
-            <Text onClick={setLocaleEN}>en</Text>
-          </Gap>
-        </Text>
-      </NavContainer>
-    </NavWrapper>
-  )
+	return (
+		<NavWrapper justifyContent="center">
+			<NavContainer alignItems="center" justifyContent="space-between">
+				<NavLogo/>
+				<Bars onClick={toggle.toggle} />
+				<Gap size="4rem" alignCenter>
+					<Link href="/" passHref>
+						<NavLink>Timetable</NavLink>
+					</Link>
+					<Link href="/" passHref>
+						<NavLink>Sponsors</NavLink>
+					</Link>
+					<Link href="/" passHref>
+						<NavLink>FAQS</NavLink>
+					</Link>
+					<Link href="/" passHref>
+						<NavLink>Session</NavLink>
+					</Link>
+					<Link href="/register" passHref>
+						<NavLink>Register</NavLink>
+					</Link>
+				</Gap>
+
+				<Text as="div" size="14px" color={gray[700]}>
+					<Gap size="4px" alignCenter>
+						<Text onClick={setLocaleTH}>th</Text>
+						<div>|</div>
+						<Text onClick={setLocaleEN}>en</Text>
+					</Gap>
+				</Text>
+			</NavContainer>
+		</NavWrapper>
+	)
 }
 
 export default NavigationBar
