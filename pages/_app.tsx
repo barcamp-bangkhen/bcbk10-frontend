@@ -11,55 +11,53 @@ import getLocalStorage from 'core/localStorage/getLocalStorage'
 import initializeStore from 'core/store/utils/initializeStore'
 
 interface Props {
-  stores: Record<string, any>
+	stores: Record<string, any>
 }
 
 const MyApp = ({ Component, pageProps, stores }: AppProps & Props) => {
-  const setLocale = useSetLocale()
+	const setLocale = useSetLocale()
 
-  useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side')
-    if (jssStyles && jssStyles.parentNode) jssStyles.parentNode.removeChild(jssStyles)
-  }, [])
+	useEffect(() => {
+		const jssStyles = document.querySelector('#jss-server-side')
+		if (jssStyles && jssStyles.parentNode) jssStyles.parentNode.removeChild(jssStyles)
+	}, [])
 
-  const mobxStores = useMemo(() => {
-    const isServer = typeof window === 'undefined'
+	const mobxStores = useMemo(() => {
+		const isServer = typeof window === 'undefined'
 
-    return isServer ? stores : initializeStore(stores)
-  }, [])
+		return isServer ? stores : initializeStore(stores)
+	}, [])
 
-  const locale = useMemo(() => {
-    const isServer = typeof window === 'undefined'
+	const locale = useMemo(() => {
+		const isServer = typeof window === 'undefined'
 
-    return isServer
-      ? DEFAULT_LOCALE
-      : getLocalStorage(STORAGE_LOCALE_KEY) || DEFAULT_LOCALE
-  }, [])
+		return isServer ? DEFAULT_LOCALE : getLocalStorage(STORAGE_LOCALE_KEY) || DEFAULT_LOCALE
+	}, [])
 
-  useEffect(() => {
-    setLocale(locale)
-  }, [locale])
+	useEffect(() => {
+		setLocale(locale)
+	}, [locale])
 
-  return (
-    <Provider {...mobxStores}>
-      <RootLayout>
-        <NextSeo title="Barcamp Bangkhen" />
-        <Component {...pageProps} />
-      </RootLayout>
-    </Provider>
-  )
+	return (
+		<Provider {...mobxStores}>
+			<RootLayout>
+				<NextSeo title="Barcamp Bangkhen" />
+				<Component {...pageProps} />
+			</RootLayout>
+		</Provider>
+	)
 }
 
 MyApp.getInitialProps = async (ctx: AppContext & Props) => {
-  const stores = initializeStore()
-  ctx.stores = stores
+	const stores = initializeStore()
+	ctx.stores = stores
 
-  const appProps = await App.getInitialProps(ctx)
+	const appProps = await App.getInitialProps(ctx)
 
-  return {
-    ...appProps,
-    stores,
-  }
+	return {
+		...appProps,
+		stores,
+	}
 }
 
 export default MyApp
