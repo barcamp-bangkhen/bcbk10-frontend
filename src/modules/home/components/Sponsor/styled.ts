@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-const LEVEL_1_HEIGHT = '100px'
-const LEVEL_2_HEIGHT = '120px'
-const LEVEL_3_HEIGHT = '150px'
+const LEVEL_1_HEIGHT = '12vh' // 100px
+const LEVEL_2_HEIGHT = '15vh' // 120px
+const LEVEL_3_HEIGHT = '18vh' // 150px
 
 const Logo = styled.div`
 	svg,
@@ -10,6 +10,13 @@ const Logo = styled.div`
 		box-sizing: border-box;
 		padding: 16px 12px;
 		margin: auto;
+
+		@media screen and (max-width: 564px) {
+			box-sizing: border-box;
+			height: auto;
+			width: auto;
+			border-block: auto;
+		}
 	}
 `
 
