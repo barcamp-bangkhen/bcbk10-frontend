@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.2...v0.2.3) (2020-11-06)
+
+
+### Features
+
+* set lint-stage ([e1257ac](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/e1257acf181dea803611bcf4f2ad094c31e3ea46))
+
+
+### Bug Fixes
+
+* move nav and rootLayout to root ([45b5d8f](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/45b5d8f8637f016d7dba60bc7bd19e70c513d32f))
+
 ### [0.2.2](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.1...v0.2.2) (2020-11-04)
 
 
