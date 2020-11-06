@@ -1,19 +1,35 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
+import {useForm} from "react-hook-form";
+import {yupResolver} from '@hookform/resolvers/yup'
 
 import useI18n from 'core/i18n/hooks/useI18n'
 
 import {FORM_TITLE} from './locales'
 import Text from 'common/components/Text'
 import ContentContainer from 'common/components/ContentContainer';
+import UserInfo from "../UserInfo";
+import EventInfo from "../EventInfo";
+import Covid19 from "../Covid19";
+import Confirmation from "../Confirmation";
+import {UserInfoData} from "../UserInfo/UserInfoData";
+import userInfoSchema from "../UserInfo/userInfoSchema";
+import covid19Schema from "../Covid19/covid19Schema";
+import {EventInfoData} from "../EventInfo/EventInfoData";
+import eventInfoSchema from "../EventInfo/eventInfoSchema";
+import {Covid19Data} from "../Covid19/Covid19Data";
+import Stepper from "common/components/Stepper";
+import Step from 'common/components/Step';
+import Form from "common/components/Form";
+import ProgressBar from "common/components/ProgressBar";
 
 const Button = styled.button`
     font: inherit;
-    border-radius: 3px;
+    border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     width: 10rem;
     background: transparent;
-    border: 2px solid black;
+    border: 1px solid coral;
     cursor: pointer;
     
     
@@ -29,39 +45,29 @@ const Button = styled.button`
 `;
 
 const NextButton = styled(Button)`
-    background: pink;
     float: right;
+    background: rgba(255, 127 ,80, 0.2);
+    color: coral;
     
     &:hover {
-        background: hotpink;
+        background: #ff7f50;
+        color: white;
     }
 `;
 
 const PreviousButton = styled(Button)`
+    background: rgba(255, 127 ,80, 0.2);
+    color: coral;
     visibility: ${props => props.visibility};
+    
+    &:hover {
+        background: #ff7f50;
+        color: white;
+    }
 `;
 
 const SubmitButton = styled(Button)`
     float: right;
-`;
-
-const Form = styled.form`
-    width: 60vw;
-    border: 1px solid black;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    
-    @media only screen and (max-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-`;
-
-const FormControl = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 0.8rem 1.5rem;
 `;
 
 const ButtonGroup = styled.div`
@@ -74,47 +80,9 @@ const ButtonGroup = styled.div`
     }
 `;
 
-const Stepper = styled.div`
-    display: flex;
-    height: 3rem;
-    border: 1px solid black;
-    margin-top: 2rem;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 1rem 1rem;
-    
-    @media only screen and (max-width: 768px) {
-        font-size: 0.8rem;
-        height: 2rem;
-    }
-`;
-
-const Step = styled.div`
-`;
-
-const TextInput = styled.input.attrs({
-    type: 'text'
-})`
-    flex: 1;
-    margin-top: 0.5rem;
-    padding: 0 0.75rem;
-    height: 2rem;
-    font: inherit;
-    font-size: 1rem;
-    border: 1px solid black;
-    border-radius: 3px;
-    outline: none;
-`;
-
-const Row = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-`;
-
-const Col = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+const Card = styled.div`
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
 `;
 
 const getSteps = () => {
@@ -127,136 +95,84 @@ const RegisterForm = () => {
     const [activeStep, setActiveStep] = useState(0);
     const steps = getSteps();
 
-    const getStepContent = (stepIndex) => {
+    const userInfoForm = useForm<UserInfoData>({
+        resolver: yupResolver(userInfoSchema)
+    })
+    const covid19Form = useForm<Covid19Data>({
+        resolver: yupResolver(covid19Schema)
+    })
+    const eventInfoForm = useForm<EventInfoData>({
+        resolver: yupResolver(eventInfoSchema)
+    })
+
+    const getStepContent = (stepIndex: number) => {
         switch (stepIndex) {
             case 0:
-                return <UserInfo/>;
+                return <UserInfo formProps={userInfoForm}/>;
             case 1:
-                return <Covid19/>;
+                return <Covid19 formProps={covid19Form}/>;
             case 2:
-                return <EventInfo/>;
+                return <EventInfo formProps={eventInfoForm}/>;
             case 3:
                 return <Confirmation/>;
+            default:
+                return 'Unknown Step Content';
         }
     };
+
+    const handlePrevious = () => {
+        setActiveStep(prevState => prevState - 1);
+    }
+
+    const handleNext = () => {
+        setActiveStep(prevState => prevState + 1);
+    };
+
+    const onSubmit = (data: any) => {
+        console.log(data)
+        handleNext()
+    }
+
+    let submitState = null
+    if (activeStep === 0) {
+        submitState = userInfoForm.handleSubmit(onSubmit)
+    } else if (activeStep === 1) {
+        submitState = covid19Form.handleSubmit(onSubmit)
+    } else if (activeStep === 2) {
+        submitState = eventInfoForm.handleSubmit(onSubmit)
+    }
 
     return (
         <ContentContainer>
             <Text as={"h1"} textAlign={"center"}>{I18n.t(FORM_TITLE)}</Text>
-            <Stepper>
-                {steps.map((stepTitle) => {
-                    return <Step key={stepTitle}>{stepTitle}</Step>
-                })}
-            </Stepper>
-            <Form>
-                {getStepContent(activeStep)}
-            </Form>
+            <Card>
+                <Stepper>
+                    <ProgressBar step={activeStep}/>
+                    {steps.map((stepTitle) => {
+                        return <Step key={stepTitle}>{stepTitle}</Step>
+                    })}
+                </Stepper>
+                <Form>
+                    {getStepContent(activeStep)}
+                </Form>
+            </Card>
             <ButtonGroup>
                 <PreviousButton
-                    type={'button'} onClick={() => setActiveStep(activeStep - 1)}
+                    onClick={handlePrevious}
                     visibility={activeStep === 0 ? 'hidden' : 'visible'}
                 >Back</PreviousButton>
                 {activeStep !== steps.length - 1 &&
                 <NextButton
-                    type={'button'} onClick={() => setActiveStep(activeStep + 1)}
+                    onClick={submitState}
                     hidden={activeStep === steps.length - 1}
                 >Next</NextButton>
                 }
                 {activeStep === steps.length - 1 &&
                 <SubmitButton
-                    type={'button'}
                 >Register</SubmitButton>
                 }
             </ButtonGroup>
         </ContentContainer>
-    )
-}
-
-const UserInfo = () => {
-    return (
-        <Row>
-            <Col>
-                <FormControl>
-                    <label>First Name</label>
-                    <TextInput/>
-                </FormControl>
-                <FormControl>
-                    <label>Last Name</label>
-                    <TextInput/>
-                </FormControl>
-                <FormControl>
-                    <label>Nickname</label>
-                    <TextInput/>
-                </FormControl>
-            </Col>
-            <Col>
-                <FormControl>
-                    <label>Congenital Disease</label>
-                    <TextInput/>
-                </FormControl>
-                <FormControl>
-                    <label>Allergic food</label>
-                    <TextInput/>
-                </FormControl>
-            </Col>
-        </Row>
-    )
-}
-
-const Covid19 = () => {
-    return (
-        <Row>
-            <Col>
-                <FormControl>
-                    <label>Test</label>
-                    <TextInput/>
-                </FormControl>
-                <FormControl>
-                    <label>Test</label>
-                    <TextInput/>
-                </FormControl>
-            </Col>
-            <Col>
-                <FormControl>
-                    <label>Test</label>
-                    <TextInput/>
-                </FormControl>
-                <FormControl>
-                    <label>Test</label>
-                    <TextInput/>
-                </FormControl>
-            </Col>
-        </Row>
-    )
-}
-
-const EventInfo = () => {
-    return (
-        <Row>
-            <Col>
-                <FormControl>
-                    <label>Test</label>
-                    <TextInput/>
-                </FormControl>
-                <FormControl>
-                    <label>Test</label>
-                    <TextInput/>
-                </FormControl>
-            </Col>
-        </Row>
-    )
-}
-
-const Confirmation = () => {
-    return (
-        <Row>
-            <Col>
-                <FormControl>
-                    <label>Test</label>
-                    <TextInput/>
-                </FormControl>
-            </Col>
-        </Row>
     )
 }
 
