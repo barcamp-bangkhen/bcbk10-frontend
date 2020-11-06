@@ -10,13 +10,7 @@ const Logo = styled.div`
 		box-sizing: border-box;
 		padding: 16px 12px;
 		margin: auto;
-
-		@media screen and (max-width: 564px) {
-			box-sizing: border-box;
-			height: auto;
-			width: auto;
-			border-block: auto;
-		}
+		border: 1px solid black;
 	}
 `
 
@@ -24,6 +18,10 @@ export const Level1Container = styled(Logo)`
 	svg,
 	img {
 		height: ${LEVEL_1_HEIGHT};
+		@media screen and (max-width: 768px) {
+			height:8vh;
+			width: auto;
+		}
 	}
 `
 
@@ -31,6 +29,10 @@ export const Level2Container = styled(Logo)`
 	svg,
 	img {
 		height: ${LEVEL_2_HEIGHT};
+		@media screen and (max-width: 768px) {
+			height: 10vh;
+			width: auto;
+		}
 	}
 `
 
@@ -38,5 +40,9 @@ export const Level3Container = styled(Logo)`
 	svg,
 	img {
 		height: ${LEVEL_3_HEIGHT};
+		@media screen and (max-width: 768px) {
+			height: 12vh;
+			width: auto;
+		}
 	}
 `

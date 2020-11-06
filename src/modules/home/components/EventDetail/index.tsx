@@ -5,13 +5,14 @@ import useI18n from 'core/i18n/hooks/useI18n'
 import { EVENT_DETAIL_TITLE, EVENT_DETAIL, PARTICIPANT_TITLE, PARTICIPANTS_DETAIL, REASONS_TO_COME_TITLE, REASONS_TO_COME_DETAIL } from './locales'
 // import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
+import Flex from 'common/components/Flex'
 
 const EventDetail = () => {
 	const I18n = useI18n()
 
 	return (
-		
-		<Gap size ='10ch' type='vertical'>
+		<Flex alignItems="center" justifyContent="center" direction="column">
+			<Gap size ='5ch' type='vertical'>
 
 			<div>			
 				{I18n.t(EVENT_DETAIL_TITLE)} <br />
@@ -27,7 +28,7 @@ const EventDetail = () => {
 				{I18n.t(REASONS_TO_COME_DETAIL)}
 			</div>
 		</Gap>
-
+	</Flex>
 	)
 }
 

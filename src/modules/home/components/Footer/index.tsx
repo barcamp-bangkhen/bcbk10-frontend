@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Flex from 'common/components/Flex'
-import BarCampIcon from 'common/components/icons/BarCampIcon'
+import FireIcon from 'common/components/icons/FireIcon'
 
 import Contact from 'modules/home/components/Contact'
 
@@ -12,7 +12,7 @@ const Footer =() =>{
         <Flex alignItems='flex-start' justifyContent='space-between' direction='row'>
 
             <Contact/>
-            <BarCampIcon size={ICON_SIZE}/>
+            {/* <FireIcon size={ICON_SIZE}/> */}
             @barcamp2020
         
         </Flex>
