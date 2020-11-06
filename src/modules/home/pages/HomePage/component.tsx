@@ -17,15 +17,17 @@ import createMeta from './createMeta'
 const HomePage = () => (
 	<ContentContainer>
 		{createMeta()}
-		{/* <Gap size="32px" type="vertical"> */}
+		<Gap size="32px" type="vertical">
 			<Flex alignItems="center" justifyContent="center" direction="column">
-				<Text color={blue}>
+				<Gap size="20vh" type="vertical">			
 					<RegisterSection />
-					<EventDetail />
-				</Text>
+					<Text color={blue}>
+						<EventDetail />
+					</Text>
+				</Gap>
 			</Flex>
 			<Sponsor />
-		{/* </Gap> */}
+		</Gap>
 
 		<Footer />
 	</ContentContainer>

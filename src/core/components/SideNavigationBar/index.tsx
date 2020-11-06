@@ -28,10 +28,10 @@ const SideNavigationBar = ({ toggle }: { toggle: any }) => {
 					<NavLink>Timetable</NavLink>
 				</Link>
 				<Link href="/" passHref>
-					<NavLink>Sponsors</NavLink>
+					<NavLink>FAQS</NavLink>
 				</Link>
 				<Link href="/" passHref>
-					<NavLink>FAQS</NavLink>
+					<NavLink>Session</NavLink>
 				</Link>
 				<Link href="/register" passHref>
 					<NavLink>Register</NavLink>

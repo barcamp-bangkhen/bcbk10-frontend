@@ -7,11 +7,12 @@ import Gap from 'common/components/Gap'
 export const NAV_BAR_HEIGHT = '64px'
 
 export const NavContainer = styled(Flex)`
-	width: 1000px;
+	width: 1920px;
 	height: ${NAV_BAR_HEIGHT};
 `
 
-export const NavWrapper = styled(Flex)``
+export const NavWrapper = styled(Flex)`
+`
 
 export const NavLink = styled.a`
 	color: #433f4f;
@@ -34,17 +35,14 @@ export const Bars = styled(FaBars)`
 	}
 `
 
-export const NavLogo = styled.div`
-	display: inline;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transform: translate(-100%, 75%);
-	font-size: 1.8rem;
-	cursor: pointer;
+export const MenuGap = styled(Gap)`
+	
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
 `
+export const LangGap = styled(Gap)`
 
-export const Gaps = styled(Gap)`
 	@media screen and (max-width: 768px) {
 		display: none;
 	}
