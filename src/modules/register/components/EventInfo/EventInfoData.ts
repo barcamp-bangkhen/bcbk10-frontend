@@ -1,5 +1,4 @@
 export interface EventInfoData {
-    interestedTopic: string
-    shirt: boolean
-    shirtSize: string
+	shirt: boolean
+	shirtSize: string
 }

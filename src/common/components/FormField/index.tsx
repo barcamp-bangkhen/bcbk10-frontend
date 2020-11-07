@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const FormField = styled.div`
-    position: relative;
-`;
+	position: relative;
+`
 
 export default FormField

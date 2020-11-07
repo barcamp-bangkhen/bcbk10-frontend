@@ -1,7 +1,11 @@
 import React from 'react'
 
+import slugify from 'slugify'
+
 import Flex from 'common/components/Flex'
 import Text from 'common/components/Text'
+
+import { topics } from '../EventInfo/topics'
 
 const Confirmation = ({ data }) => {
 	const {
@@ -13,7 +17,18 @@ const Confirmation = ({ data }) => {
 		conDisease,
 		allergicFood,
 	} = data.userInfo[0]
-	const { interestedTopic, shirt, shirtSize } = data.eventInfo[0]
+	const eventInfoData = data.eventInfo[0]
+
+	const interests: string[] = []
+	for (const data in eventInfoData) {
+		if (eventInfoData[data] === true) {
+			topics.forEach((topic: string) => {
+				if (slugify(topic, { remove: /[()./]/g, lower: true }) === data) {
+					interests.push(topic)
+				}
+			})
+		}
+	}
 
 	return (
 		<div>
@@ -38,9 +53,9 @@ const Confirmation = ({ data }) => {
 			</Text>
 			<Flex justifyContent="space-around">
 				<Flex direction="column">
-					<Text>Interested Topic: {interestedTopic}</Text>
-					{shirt === 'yes' && <Text>Shirt size: {shirtSize}</Text>}
-					{shirt === 'no' && <Text>No shirt</Text>}
+					{eventInfoData.shirt === 'yes' && <Text>Shirt size: {eventInfoData.shirtSize}</Text>}
+					{eventInfoData.shirt === 'no' && <Text>No shirt</Text>}
+					<Text>Interests Topic: {!interests ? '-' : interests.join(', ')}</Text>
 				</Flex>
 			</Flex>
 		</div>

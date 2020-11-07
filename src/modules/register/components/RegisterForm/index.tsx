@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import slugify from 'slugify'
 import styled from 'styled-components'
 
 import useI18n from 'core/i18n/hooks/useI18n'
@@ -21,6 +22,7 @@ import covid19Schema from '../Covid19/covid19Schema'
 import EventInfo from '../EventInfo'
 import { EventInfoData } from '../EventInfo/EventInfoData'
 import eventInfoSchema from '../EventInfo/eventInfoSchema'
+import { topics } from '../EventInfo/topics'
 import UserInfo from '../UserInfo'
 import { UserInfoData } from '../UserInfo/UserInfoData'
 import userInfoSchema from '../UserInfo/userInfoSchema'
@@ -86,6 +88,11 @@ const ButtonGroup = styled.div`
 const Card = styled.div`
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border-radius: 1rem;
+	width: 60vw;
+
+	@media only screen and (max-width: 768px) {
+		width: 82.5vw;
+	}
 `
 
 const getSteps = () => {
@@ -126,11 +133,11 @@ const RegisterForm = () => {
 	}
 
 	const handlePrevious = () => {
-		setActiveStep((prevState) => prevState - 1)
+		setActiveStep((prevState: number) => prevState - 1)
 	}
 
 	const handleNext = () => {
-		setActiveStep((prevState) => prevState + 1)
+		setActiveStep((prevState: number) => prevState + 1)
 	}
 
 	const onSubmit = (data: any) => {
@@ -146,10 +153,24 @@ const RegisterForm = () => {
 
 	const submitForm = () => {
 		// eslint-disable-next-line no-console
+		const interests: string[] = []
+		for (const data in eventInfo[0]) {
+			if (eventInfo[0][data] === true) {
+				topics.forEach((topic: string) => {
+					if (slugify(topic, { remove: /[()./]/g, lower: true }) === data) {
+						interests.push(topic)
+					}
+				})
+			}
+		}
 		console.log({
 			userInfo: userInfo[0],
 			covid19Info: covid19Info[0],
-			eventInfo: eventInfo[0],
+			eventInfo: {
+				interestsTopic: interests,
+				shirt: eventInfo[0].shirt,
+				shirtSize: eventInfo[0].shirtSize,
+			},
 		})
 	}
 

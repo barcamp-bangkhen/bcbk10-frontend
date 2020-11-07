@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Radio = styled.input.attrs({
-    type: 'radio'
+	type: 'radio',
 })`
-    margin-right: 0.8rem;
-`;
+	margin-right: 0.8rem;
+`
 
 export default Radio
