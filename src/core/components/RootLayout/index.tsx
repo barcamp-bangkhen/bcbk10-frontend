@@ -6,6 +6,8 @@ import { createGlobalStyle } from 'styled-components'
 import NavigationBar from 'core/components/NavigationBar'
 import SideNavigationBar from '../SideNavigationBar'
 
+import Background from 'common/components/Background'
+
 import useToggle from 'common/hooks/useToggle'
 
 const GlobalStyle = createGlobalStyle`
@@ -49,9 +51,11 @@ const RootLayout = ({ children }: Props) => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <GlobalStyle />
+        <Background>
         <SideNavigationBar toggle={toggle} isOpen={toggle.isOpen}  /> 
         <NavigationBar toggle={toggle}/>
         {children}
+        </Background>
       </div>
     ) 
   }
