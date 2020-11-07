@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.3...v0.3.0) (2020-11-07)
+
+
+### Features
+
+* set new i18n ([cce4de1](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/cce4de13614c135af63d94ce68f6a11222b0aafe))
+
+
+### Bug Fixes
+
+* styled and node engine ([90f2a94](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/90f2a940a3aaa613225091be7ddb8ac826129d04))
+
 ### [0.2.3](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.2...v0.2.3) (2020-11-06)
 
 
