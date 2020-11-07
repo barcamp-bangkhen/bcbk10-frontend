@@ -1,9 +1,18 @@
 import React from 'react'
 
-import { IconProps } from '../types'
+import styled from 'styled-components'
 
-const FireIcon = ({ size, ...props }: IconProps) => {
-    return <img src='/static/images/Artwork/fire.png' alt="BarCamp fire" sizes='16px'/>
-}
+const FireIcon = styled.img`
+    content: url("/static/images/Artwork/fire.png");
+    height: 64px;
+	width: auto;
+	float: left;
 
+	@media screen and(max-width: 768px) {
+		display: inline;
+		top: 0;
+		transform: translate(-100%, 75%);
+		cursor: pointer;
+	}
+`
 export default FireIcon
