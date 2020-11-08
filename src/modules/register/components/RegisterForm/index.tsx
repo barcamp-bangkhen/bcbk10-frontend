@@ -134,10 +134,12 @@ const RegisterForm = () => {
 
 	const handlePrevious = () => {
 		setActiveStep((prevState: number) => prevState - 1)
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 
 	const handleNext = () => {
 		setActiveStep((prevState: number) => prevState + 1)
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 
 	const onSubmit = (data: any) => {

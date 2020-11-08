@@ -5,17 +5,15 @@ import slugify from 'slugify'
 
 import { Checkbox, CheckboxLabel, Checkmark } from 'common/components/Checkbox'
 import Col from 'common/components/Col'
-import ErrorMessage from 'common/components/ErrorMessage'
 import FormControl from 'common/components/FormControl'
 import FormField from 'common/components/FormField'
-import Radio from 'common/components/Radio'
-import RadioGroup from 'common/components/RadioGroup'
+import { Radio, RadioLabel, Circle } from 'common/components/Radio'
 import Row from 'common/components/Row'
 import Text from 'common/components/Text'
 
 import { topics } from './topics'
 
-const EventInfo = ({ formProps: { register, watch }, data }) => {
+const EventInfo = ({ formProps: { register, watch, errors }, data }) => {
 	const eventInfoData = data
 
 	return (
@@ -47,25 +45,27 @@ const EventInfo = ({ formProps: { register, watch }, data }) => {
 						<Col>
 							<FormField>
 								<FormControl>
-									<label>Do you want shirt?</label>
-									<RadioGroup>
+									<Text as="p">Do you want shirt?</Text>
+									<RadioLabel>
+										Yes
 										<Radio
 											name="shirt"
 											value="yes"
 											ref={register}
-											defaultChecked={!eventInfoData.shirt ? true : eventInfoData.shirt === 'yes'}
+											defaultChecked={!!eventInfoData.shirt}
 										/>
-										<label>Yes</label>
-									</RadioGroup>
-									<RadioGroup>
+										<Circle error={errors.shirt} />
+									</RadioLabel>
+									<RadioLabel>
+										No
 										<Radio
 											name="shirt"
 											value="no"
 											ref={register}
 											defaultChecked={eventInfoData.shirt === 'no'}
 										/>
-										<label>No</label>
-									</RadioGroup>
+										<Circle error={errors.shirt} />
+									</RadioLabel>
 								</FormControl>
 							</FormField>
 						</Col>
@@ -73,15 +73,57 @@ const EventInfo = ({ formProps: { register, watch }, data }) => {
 							<Col>
 								<FormField>
 									<FormControl>
-										<label>Size</label>
-										<select name="shirtSize" ref={register} defaultValue={eventInfoData.shirtSize}>
-											<option>-</option>
-											<option>S</option>
-											<option>M</option>
-											<option>L</option>
-											<option>XL</option>
-											<option>XXL</option>
-										</select>
+										<Text as="p">Size</Text>
+										<RadioLabel>
+											S
+											<Radio
+												name="shirtSize"
+												value="S"
+												ref={register}
+												defaultChecked={eventInfoData.shirtSize === 'S'}
+											/>
+											<Circle />
+										</RadioLabel>
+										<RadioLabel>
+											M
+											<Radio
+												name="shirtSize"
+												value="M"
+												ref={register}
+												defaultChecked={eventInfoData.shirtSize === 'M'}
+											/>
+											<Circle />
+										</RadioLabel>
+										<RadioLabel>
+											L
+											<Radio
+												name="shirtSize"
+												value="L"
+												ref={register}
+												defaultChecked={eventInfoData.shirtSize === 'L'}
+											/>
+											<Circle />
+										</RadioLabel>
+										<RadioLabel>
+											XL
+											<Radio
+												name="shirtSize"
+												value="XL"
+												ref={register}
+												defaultChecked={eventInfoData.shirtSize === 'XL'}
+											/>
+											<Circle />
+										</RadioLabel>
+										<RadioLabel>
+											XXL
+											<Radio
+												name="shirtSize"
+												value="XXL"
+												ref={register}
+												defaultChecked={eventInfoData.shirtSize === 'XXL'}
+											/>
+											<Circle />
+										</RadioLabel>
 									</FormControl>
 								</FormField>
 							</Col>

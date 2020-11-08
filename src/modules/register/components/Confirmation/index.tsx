@@ -55,7 +55,7 @@ const Confirmation = ({ data }) => {
 				<Flex direction="column">
 					{eventInfoData.shirt === 'yes' && <Text>Shirt size: {eventInfoData.shirtSize}</Text>}
 					{eventInfoData.shirt === 'no' && <Text>No shirt</Text>}
-					<Text>Interests Topic: {!interests ? '-' : interests.join(', ')}</Text>
+					<Text>Interests Topic: {!interests.length ? '-' : interests.join(', ')}</Text>
 				</Flex>
 			</Flex>
 		</div>
