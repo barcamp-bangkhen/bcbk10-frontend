@@ -5,8 +5,7 @@ export const MapDiv = styled.iframe`
 	height: 380px;
 	border: none;
 	margin: 1em auto;
-	border:1px solid black;
 	@media screen and (max-width: 768px) {
-		width: 60%;
+		width: 100%;
 	}
 `

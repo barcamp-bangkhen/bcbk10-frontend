@@ -15,7 +15,7 @@ const EventDetail = () => {
 	return (
 		// <div style={{border: "1px solid black;"}}>
 			<Flex alignItems='center' justifyContent='center' direction='column'>
-			<Gap size ='32px' type='vertical' justifyCenter responsive={true}> 
+			<Gap size ='32px' type='vertical' justifyCenter> 
 
 				<Detail>
 				<DetailTitle>{I18n.t(EVENT_DETAIL_TITLE)} </DetailTitle>

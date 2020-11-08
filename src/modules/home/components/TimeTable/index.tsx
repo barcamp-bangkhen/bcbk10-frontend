@@ -26,7 +26,6 @@ const TimeTable = () => {
 						<td>{I18n.t(tableHeader[0])}</td>
 						<td>{I18n.t(tableHeader[1])}</td>
 					</tr>
-
 					{ACTIVITIES.map(function (activity, index) {
 						return (
 							<tr key={index}>

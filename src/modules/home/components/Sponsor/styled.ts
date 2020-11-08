@@ -10,10 +10,9 @@ const Logo = styled.div`
 		box-sizing: border-box;
 		padding: 16px 12px;
 		margin: auto;
-		border: 1px solid black;
-		/* flex-direction:row; */
 		margin-top: 1em;
 		padding-bottom: 2em;
+		border: 1px  solid black;
 	}
 `
 
@@ -21,11 +20,12 @@ export const Level1Container = styled(Logo)`
 	svg,
 	img {
 		height: ${LEVEL_1_HEIGHT};
-		@media screen and (max-width: 768px) {
-			height:100px;
-			width: auto;
+		@media screen and (orientation:portrait) and (max-width: 768px) {
+			height: 90px;
 		}
-
+		@media screen and (orientation:landscape) and (max-width: 768px){
+			height:100px;
+		}
 	}
 `
 
@@ -33,11 +33,12 @@ export const Level2Container = styled(Logo)`
 	svg,
 	img {
 		height: ${LEVEL_2_HEIGHT};
-		@media screen and (max-width: 768px) {
-			height: 120px;
-			width: auto;
+		@media screen and (orientation:portrait) and (max-width: 768px) {
+			height: 100px;
 		}
-
+		@media screen and (orientation:landscape) and (max-width: 768px){
+			height:120px;
+		}
 	}
 `
 
@@ -45,9 +46,11 @@ export const Level3Container = styled(Logo)`
 	svg,
 	img {
 		height: ${LEVEL_3_HEIGHT};
-		@media screen and (max-width: 768px) {
-			height: 150px;
-			width: auto;
+		@media screen and (orientation:portrait) and (max-width: 768px) {
+			height: 110px;
+		}
+		@media screen and (orientation:landscape) and (max-width: 768px){
+			height:140px;
 		}
 
 	}

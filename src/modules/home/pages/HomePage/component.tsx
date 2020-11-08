@@ -19,23 +19,14 @@ const HomePage = () => (
 	<ContentContainer>
 		{createMeta()}
 		<Gap size="32px" type="vertical">
-			<Flex alignItems="center" justifyContent="center" direction="column">
-				<Gap size="56vh" type="vertical">
-					<RegisterSection />
-						<Gap size="15vh" type="vertical">
-							<Text color={blue}>
-								<EventDetail />
-							</Text>
-							<Map />
-							<Sponsor />
-						</Gap>
-				</Gap>
-
-			</Flex>
-
+				<RegisterSection />
+				<Text color={blue}>
+					<EventDetail />
+				</Text>
+				<Map />
+				<Sponsor />
+			<Footer />
 		</Gap>
-
-		<Footer />
 	</ContentContainer>
 )
 

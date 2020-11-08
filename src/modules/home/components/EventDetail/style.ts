@@ -19,7 +19,7 @@ export const DetailTitle  = styled.h3`
 
 `
 export const Detail = styled.div`
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 15px 40px 50px 40px;
 
   /* margin-top: -8px; */
@@ -28,9 +28,9 @@ export const Detail = styled.div`
   /* margin: 15px 50px 50px 40px; */
 
   @media (max-width: 768px) {
-    padding-left:200px;
-    width: 60%;
-    padding-right:3rem;
+    /* padding-left:200px; */
+    /* width: auto; */
+    /* padding-right:3rem; */
     p {
       font-size: 18px;
       margin-top: 8px;

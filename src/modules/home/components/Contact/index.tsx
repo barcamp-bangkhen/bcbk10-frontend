@@ -33,7 +33,6 @@ const Contact = () => {
 					</Link>
 				</Gap>
 			</Gap>
-
 		</Flex>
 	)
 }

@@ -51,11 +51,11 @@ const RootLayout = ({ children }: Props) => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <GlobalStyle />
-        <Background>
+        {/* <Background> */}
         <SideNavigationBar toggle={toggle} isOpen={toggle.isOpen}  /> 
         <NavigationBar toggle={toggle}/>
         {children}
-        </Background>
+        {/* </Background> */}
       </div>
     ) 
   }
