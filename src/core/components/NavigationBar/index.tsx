@@ -12,7 +12,6 @@ import BarCampIcon from '../../../common/components/icons/BarCampIcon'
 
 import { Bars, NavContainer, NavLink, NavWrapper, MenuGap, LangGap } from './styled'
 
-
 const NavigationBar = ({ toggle }: { toggle: any }) => {
 	const setLocale = useSetLocale()
 
