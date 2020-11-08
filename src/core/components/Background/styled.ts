@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const Background1 = styled.div`
@@ -20,6 +19,12 @@ const Background1 = styled.div`
     background-size: contain;
     border: 1px solid #000;
 `
+
+export const Back = styled.div`
+    background: url('/static/images/Artwork/background/bg.jpg');
+    background-size: contain;
+`
+
 const Layer1 = styled.div`
     background: url('/static/images/Artwork/background/layer1.png');
     background-size: contain;
@@ -45,16 +50,3 @@ const TopDot = styled.div`
     background: url('/static/images/Artwork/background/top_dot.png');
     background-size: contain;
 `
-
-const Background = () => {
-    return(
-        <div>       
-            <Layer2/>
-            <Layer1/>
-        </div>
-    )
-}
-
-
-
-export default Background

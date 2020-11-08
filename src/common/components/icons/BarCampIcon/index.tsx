@@ -5,7 +5,7 @@ const BarCampIcon = styled.img`
 	height: 64px;
 	width: auto;
 	float: left;
-
+	
 	@media screen and(max-width: 768px) {
 		display: inline;
 		top: 0;
