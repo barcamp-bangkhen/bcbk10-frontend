@@ -17,17 +17,13 @@ export const DetailTitle  = styled.h3`
 
 `
 export const Detail = styled.div`
-  padding: 15px 40px 50px 40px;
+  padding: 15px 100px 60px 100px;
   color: ${blue};
-  /* margin-top: -8px; */
-  /* margin-left: 10px; */
-  margin-bottom: 1em;
-  /* margin: 15px 50px 50px 40px; */
+
+  border: 1px solid black;
 
   @media (max-width: 768px) {
-    /* padding-left:200px; */
-    /* width: auto; */
-    /* padding-right:3rem; */
+
     p {
       font-size: 18px;
       margin-top: 8px;

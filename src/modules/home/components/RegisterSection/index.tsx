@@ -11,7 +11,7 @@ const RegisterSection = () => (
 	<Container>
 		<Flex alignItems="center" justifyContent="center" direction="column">
 				<HomeIcon/> 
-				<Button>Register Now</Button>
+				<Button>REGISTER NOW</Button>
 		</Flex>
 	</Container>
 

@@ -21,7 +21,7 @@ export const Level1Container = styled(Logo)`
 	img {
 		height: ${LEVEL_1_HEIGHT};
 		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 90px;
+			height: 80px;
 		}
 		@media screen and (orientation:landscape) and (max-width: 768px){
 			height:100px;
@@ -34,7 +34,7 @@ export const Level2Container = styled(Logo)`
 	img {
 		height: ${LEVEL_2_HEIGHT};
 		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 100px;
+			height: 85px;
 		}
 		@media screen and (orientation:landscape) and (max-width: 768px){
 			height:120px;
@@ -46,8 +46,9 @@ export const Level3Container = styled(Logo)`
 	svg,
 	img {
 		height: ${LEVEL_3_HEIGHT};
+
 		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 110px;
+			height: 90px;
 		}
 		@media screen and (orientation:landscape) and (max-width: 768px){
 			height:140px;

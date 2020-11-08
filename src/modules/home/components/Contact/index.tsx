@@ -19,21 +19,23 @@ const Contact = () => {
 	const I18n = useI18n()
 
 	return (
-		<Flex alignItems='flex-start' justifyContent="center" direction='row'>
-			<Gap size="16px" type='horizontal'>
-				<Gap size="12px" justifyCenter>
-					<Link href={FACEBOOK_URL} passHref={true}>
-						<FacebookIcon size={ICON_SIZE} cursor="pointer" />
-					</Link>
-					<Link href={IG_URL} passHref={true}>
-						<InstagramIcon size={ICON_SIZE} cursor="pointer" />
-					</Link>
-					<Link href={TWITTER_URL} passHref={true}>
-						<TwitterIcon size={ICON_SIZE} cursor="pointer" />
-					</Link>
+			<Flex alignItems='flex-start' justifyContent="center" direction='row'>
+						{/* <div style={{border:"1px solid black"}}>  */}
+				<Gap size="16px" type='horizontal'>
+					<Gap size="12px" justifyCenter>
+						<Link href={FACEBOOK_URL} passHref={true}>
+							<FacebookIcon size={ICON_SIZE} cursor="pointer" />
+						</Link>
+						<Link href={IG_URL} passHref={true}>
+							<InstagramIcon size={ICON_SIZE} cursor="pointer" />
+						</Link>
+						<Link href={TWITTER_URL} passHref={true}>
+							<TwitterIcon size={ICON_SIZE} cursor="pointer" />
+						</Link>
+					</Gap>
 				</Gap>
-			</Gap>
-		</Flex>
+				{/* </div> */}
+			</Flex>
 	)
 }
 
