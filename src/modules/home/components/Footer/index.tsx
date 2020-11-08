@@ -11,11 +11,14 @@ const ICON_SIZE = 24
 
 const Footer =() =>{
     return(
+
+        <div style={{border: "1px solid black;"}}>
         <Flex alignItems='center' justifyContent='space-between' direction='row'>
                 <Contact/>
                 <FireIcon/>
                 @barcamp2020
         </Flex>
+        </div>
     )
 }
 

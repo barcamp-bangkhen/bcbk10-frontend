@@ -11,8 +11,8 @@ const ICON_SIZE = 1
 const RegisterSection = () => (
 	<Container>
 		<Flex alignItems="center" justifyContent="center" direction="column">
-			<HomeIcon/> 
-			<Button>Register Now</Button>
+				<HomeIcon/> 
+				<Button>Register Now</Button>
 		</Flex>
 	</Container>
 )
