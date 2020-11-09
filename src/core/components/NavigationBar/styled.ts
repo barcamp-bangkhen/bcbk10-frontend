@@ -1,5 +1,5 @@
 import { FaBars } from 'react-icons/fa'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
@@ -14,7 +14,6 @@ export const NavContainer = styled(Flex)`
 	@media screen and (max-width: 768px) {
 		width: 100vw;
 	}
-	background-color: #f4e9da;
 `
 
 export const NavWrapper = styled(Flex)``
@@ -30,6 +29,10 @@ export const NavLink = styled.a`
 	@media screen and (max-width: 1024px) {
 		font-size: 2.5vw;
 	}
+	${props => props.className &&
+		css`
+			color: #da6353; ;
+		`}
 `
 export const Bars = styled(FaBars)`
 	display: none;

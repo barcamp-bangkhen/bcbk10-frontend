@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react'
 
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import useI18n from 'core/i18n/hooks/useI18n'
 import useSetLocale from 'core/i18n/hooks/useSetLocale'
@@ -26,6 +27,9 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 	}, [setLocale])
 
 	const I18n = useI18n()
+
+	const router = useRouter()
+
 	return (
 		<NavWrapper justifyContent="center">
 			<NavContainer alignItems="center" justifyContent="space-between">
@@ -34,16 +38,24 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 
 				<MenuGap size="6rem" alignCenter>
 					<Link href="/" passHref>
-						<NavLink>{I18n.t(TIME_TABLE)}</NavLink>
+						<NavLink className={router.pathname === '/' ? 'active' : ''}>
+							{I18n.t(TIME_TABLE)}
+						</NavLink>
 					</Link>
-					<Link href="/" passHref>
-						<NavLink>{I18n.t(FAQS)}</NavLink>
+					<Link href="/FAQS" passHref>
+						<NavLink className={router.pathname === '/FAQS' ? 'active' : ''}>
+							{I18n.t(FAQS)}
+						</NavLink>
 					</Link>
-					<Link href="/" passHref>
-						<NavLink>{I18n.t(SESSION)}</NavLink>
+					<Link href="/session" passHref>
+						<NavLink className={router.pathname === '/seesion' ? 'active' : ''}>
+							{I18n.t(SESSION)}
+						</NavLink>
 					</Link>
 					<Link href="/register" passHref>
-						<NavLink>{I18n.t(REGISTER)}</NavLink>
+						<NavLink className={router.pathname === '/register' ? 'active' : ''}>
+							{I18n.t(REGISTER)}
+						</NavLink>
 					</Link>
 				</MenuGap>
 
