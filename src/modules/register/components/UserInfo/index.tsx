@@ -1,5 +1,7 @@
 import React from 'react'
 
+import useI18n from 'core/i18n/hooks/useI18n'
+
 import Col from 'common/components/Col'
 import ErrorMessage from 'common/components/ErrorMessage'
 import FormControl from 'common/components/FormControl'
@@ -9,8 +11,20 @@ import Row from 'common/components/Row'
 import Span from 'common/components/Span'
 import TextInput from 'common/components/TextInput'
 
+import {
+	FIRST_NAME,
+	LAST_NAME,
+	NICKNAME,
+	EMAIL,
+	PHONE_NUMBER,
+	CONGENITAL_DISEASE,
+	ALLERGIC_FOOD,
+} from './locales'
+
 const UserInfo = ({ formProps: { register, errors }, data }) => {
 	const { firstName, lastName, nickname, email, phoneNumber, conDisease, allergicFood } = data
+
+	const I18n = useI18n()
 
 	return (
 		<Row>
@@ -19,7 +33,7 @@ const UserInfo = ({ formProps: { register, errors }, data }) => {
 					<FormControl>
 						<TextInput name="firstName" ref={register} placeholder=" " defaultValue={firstName} />
 						<Label>
-							<Span>First name</Span>
+							<Span>{I18n.t(FIRST_NAME)}</Span>
 						</Label>
 					</FormControl>
 					<ErrorMessage show={errors.firstName}>{errors.firstName?.message}</ErrorMessage>
@@ -34,7 +48,7 @@ const UserInfo = ({ formProps: { register, errors }, data }) => {
 							defaultValue={lastName}
 						/>
 						<Label>
-							<Span>Last name</Span>
+							<Span>{I18n.t(LAST_NAME)}</Span>
 						</Label>
 					</FormControl>
 					<ErrorMessage show={errors.lastName}>{errors.lastName?.message}</ErrorMessage>
@@ -49,7 +63,7 @@ const UserInfo = ({ formProps: { register, errors }, data }) => {
 							defaultValue={nickname}
 						/>
 						<Label>
-							<Span>Nickname</Span>
+							<Span>{I18n.t(NICKNAME)}</Span>
 						</Label>
 					</FormControl>
 					<ErrorMessage show={errors.nickname}>{errors.nickname?.message}</ErrorMessage>
@@ -64,7 +78,7 @@ const UserInfo = ({ formProps: { register, errors }, data }) => {
 							defaultValue={email}
 						/>
 						<Label>
-							<Span>Email</Span>
+							<Span>{I18n.t(EMAIL)}</Span>
 						</Label>
 					</FormControl>
 					<ErrorMessage show={errors.email}>{errors.email?.message}</ErrorMessage>
@@ -81,7 +95,7 @@ const UserInfo = ({ formProps: { register, errors }, data }) => {
 							defaultValue={phoneNumber}
 						/>
 						<Label>
-							<Span>Phone number</Span>
+							<Span>{I18n.t(PHONE_NUMBER)}</Span>
 						</Label>
 					</FormControl>
 					<ErrorMessage show={errors.phoneNumber}>{errors.phoneNumber?.message}</ErrorMessage>
@@ -90,7 +104,7 @@ const UserInfo = ({ formProps: { register, errors }, data }) => {
 					<FormControl>
 						<TextInput name="conDisease" ref={register} placeholder=" " defaultValue={conDisease} />
 						<Label>
-							<Span>Congenital disease</Span>
+							<Span>{I18n.t(CONGENITAL_DISEASE)}</Span>
 						</Label>
 					</FormControl>
 				</FormField>
@@ -103,7 +117,7 @@ const UserInfo = ({ formProps: { register, errors }, data }) => {
 							defaultValue={allergicFood}
 						/>
 						<Label>
-							<Span>Allergic food</Span>
+							<Span>{I18n.t(ALLERGIC_FOOD)}</Span>
 						</Label>
 					</FormControl>
 				</FormField>

@@ -1,0 +1,7 @@
+export const FIRST_NAME = ['ชื่อจริง', 'First name']
+export const LAST_NAME = ['นามสกุล', 'Last name']
+export const NICKNAME = ['ชื่อเล่น', 'Nickname']
+export const EMAIL = ['อีเมล', 'Email']
+export const PHONE_NUMBER = ['เบอร์โทรศัพท์', 'Phone number']
+export const CONGENITAL_DISEASE = ['โรคประจำตัว', 'Congenital disease']
+export const ALLERGIC_FOOD = ['อาหารที่แพ้', 'Allergic food']

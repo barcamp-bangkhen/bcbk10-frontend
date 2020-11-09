@@ -3,6 +3,8 @@ import React from 'react'
 
 import slugify from 'slugify'
 
+import useI18n from 'core/i18n/hooks/useI18n'
+
 import { Checkbox, CheckboxLabel, Checkmark } from 'common/components/Checkbox'
 import Col from 'common/components/Col'
 import FormControl from 'common/components/FormControl'
@@ -11,18 +13,17 @@ import { Radio, RadioLabel, Circle } from 'common/components/Radio'
 import Row from 'common/components/Row'
 import Text from 'common/components/Text'
 
+import { INTEREST, DETAIL, SHIRT, SIZE, YES, NO } from './locales'
 import { topics } from './topics'
 
 const EventInfo = ({ formProps: { register, watch, errors }, data }) => {
 	const eventInfoData = data
 
+	const I18n = useI18n()
 	return (
 		<div>
-			<Text as="h3">Interests Topic</Text>
-			<Text as="p">
-				BarCamp Bangkhen intends to be the area of everyone, regardless of their personal interests.
-				We would like to know your personal interests in order to predict the trend of our event.
-			</Text>
+			<Text as="h3">{I18n.t(INTEREST)}</Text>
+			<Text as="p">{I18n.t(DETAIL)}</Text>
 			<Row>
 				<Col>
 					<FormControl>
@@ -45,9 +46,9 @@ const EventInfo = ({ formProps: { register, watch, errors }, data }) => {
 						<Col>
 							<FormField>
 								<FormControl>
-									<Text as="p">Do you want shirt?</Text>
+									<Text as="p">{I18n.t(SHIRT)}</Text>
 									<RadioLabel>
-										Yes
+										{I18n.t(YES)}
 										<Radio
 											name="shirt"
 											value="yes"
@@ -57,7 +58,7 @@ const EventInfo = ({ formProps: { register, watch, errors }, data }) => {
 										<Circle error={errors.shirt} />
 									</RadioLabel>
 									<RadioLabel>
-										No
+										{I18n.t(NO)}
 										<Radio
 											name="shirt"
 											value="no"
@@ -73,7 +74,7 @@ const EventInfo = ({ formProps: { register, watch, errors }, data }) => {
 							<Col>
 								<FormField>
 									<FormControl>
-										<Text as="p">Size</Text>
+										<Text as="p">{I18n.t(SIZE)}</Text>
 										<RadioLabel>
 											S
 											<Radio

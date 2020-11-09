@@ -2,10 +2,23 @@ import React from 'react'
 
 import slugify from 'slugify'
 
+import useI18n from 'core/i18n/hooks/useI18n'
+
 import Flex from 'common/components/Flex'
 import Text from 'common/components/Text'
 
+import { SIZE, INTEREST, NO_SHIRT } from '../EventInfo/locales'
 import { topics } from '../EventInfo/topics'
+import { USER_INFO, EVENT_INFO } from '../RegisterForm/locales'
+import {
+	FIRST_NAME,
+	LAST_NAME,
+	NICKNAME,
+	EMAIL,
+	PHONE_NUMBER,
+	CONGENITAL_DISEASE,
+	ALLERGIC_FOOD,
+} from '../UserInfo/locales'
 
 const Confirmation = ({ data }) => {
 	const {
@@ -30,32 +43,54 @@ const Confirmation = ({ data }) => {
 		}
 	}
 
+	const I18n = useI18n()
+
 	return (
 		<div>
-			<Text as="h1" textAlign="center">
-				User Info
+			<Text as="h2" textAlign="center">
+				{I18n.t(USER_INFO)}
 			</Text>
 			<Flex justifyContent="space-around">
 				<Flex direction="column">
-					<Text>First name: {firstName}</Text>
-					<Text>Last name: {lastName}</Text>
-					<Text>Nickname: {nickname}</Text>
-					<Text>Email: {email}</Text>
+					<Text>
+						{I18n.t(FIRST_NAME)}: {firstName}
+					</Text>
+					<Text>
+						{I18n.t(LAST_NAME)}: {lastName}
+					</Text>
+					<Text>
+						{I18n.t(NICKNAME)}: {nickname}
+					</Text>
+					<Text>
+						{I18n.t(EMAIL)}: {email}
+					</Text>
 				</Flex>
 				<Flex direction="column">
-					<Text>Phone number: {phoneNumber}</Text>
-					<Text>Congenital disease: {!conDisease ? '-' : conDisease}</Text>
-					<Text>Allergic food: {!allergicFood ? '-' : allergicFood}</Text>
+					<Text>
+						{I18n.t(PHONE_NUMBER)}: {phoneNumber}
+					</Text>
+					<Text>
+						{I18n.t(CONGENITAL_DISEASE)}: {!conDisease ? '-' : conDisease}
+					</Text>
+					<Text>
+						{I18n.t(ALLERGIC_FOOD)}: {!allergicFood ? '-' : allergicFood}
+					</Text>
 				</Flex>
 			</Flex>
-			<Text as="h1" textAlign="center">
-				Event Info
+			<Text as="h2" textAlign="center">
+				{I18n.t(EVENT_INFO)}
 			</Text>
 			<Flex justifyContent="space-around">
 				<Flex direction="column">
-					{eventInfoData.shirt === 'yes' && <Text>Shirt size: {eventInfoData.shirtSize}</Text>}
-					{eventInfoData.shirt === 'no' && <Text>No shirt</Text>}
-					<Text>Interests Topic: {!interests.length ? '-' : interests.join(', ')}</Text>
+					{eventInfoData.shirt === 'yes' && (
+						<Text>
+							{I18n.t(SIZE)}: {eventInfoData.shirtSize}
+						</Text>
+					)}
+					{eventInfoData.shirt === 'no' && <Text>{I18n.t(NO_SHIRT)}</Text>}
+					<Text>
+						{I18n.t(INTEREST)}: {!interests.length ? '-' : interests.join(', ')}
+					</Text>
 				</Flex>
 			</Flex>
 		</div>

@@ -1,1 +1,7 @@
 export const FORM_TITLE = ['ลงทะเบียนเข้าร่วมงาน', 'Register']
+export const USER_INFO = ['ข้อมูลผู้เข้าร่วม', 'User Info']
+export const EVENT_INFO = ['ข้อมูลกิจกรรม', 'Event Info']
+export const CONFIRMATION = ['ยืนยันข้อมูล', 'Confirmation']
+export const NEXT = ['ถัดไป', 'Next']
+export const BACK = ['กลับ', 'Back']
+export const SUBMIT = ['ยืนยัน', 'Submit']

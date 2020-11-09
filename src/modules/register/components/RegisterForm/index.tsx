@@ -35,7 +35,7 @@ import UserInfo from '../UserInfo'
 import { UserInfoData } from '../UserInfo/UserInfoData'
 import userInfoSchema from '../UserInfo/userInfoSchema'
 
-import { FORM_TITLE } from './locales'
+import { FORM_TITLE, USER_INFO, EVENT_INFO, CONFIRMATION, NEXT, BACK, SUBMIT } from './locales'
 
 const Card = styled.div`
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -47,10 +47,6 @@ const Card = styled.div`
 	}
 `
 
-const getSteps = () => {
-	return ['User Info', 'Covid-19', 'Event Info', 'Confirmation']
-}
-
 const RegisterForm = () => {
 	const I18n = useI18n()
 
@@ -59,7 +55,6 @@ const RegisterForm = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const [activeStep, setActiveStep] = useState(0)
-	const steps = getSteps()
 
 	const userInfoForm = useForm<UserInfoData>({
 		resolver: yupResolver(userInfoSchema),
@@ -70,6 +65,10 @@ const RegisterForm = () => {
 	const eventInfoForm = useForm<EventInfoData>({
 		resolver: yupResolver(eventInfoSchema),
 	})
+
+	const getSteps = () => {
+		return [I18n.t(USER_INFO), 'Covid-19', I18n.t(EVENT_INFO), I18n.t(CONFIRMATION)]
+	}
 
 	const getStepContent = (stepIndex: number) => {
 		switch (stepIndex) {
@@ -137,6 +136,8 @@ const RegisterForm = () => {
 			})
 	}
 
+	const steps = getSteps()
+
 	let submitState = null
 	if (activeStep === 0) {
 		submitState = userInfoForm.handleSubmit(onSubmit)
@@ -165,11 +166,11 @@ const RegisterForm = () => {
 					onClick={handlePrevious}
 					visibility={activeStep === 0 ? 'hidden' : 'visible'}
 				>
-					Back
+					{I18n.t(BACK)}
 				</PreviousButton>
 				{activeStep !== steps.length - 1 && (
 					<NextButton onClick={submitState} hidden={activeStep === steps.length - 1}>
-						Next
+						{I18n.t(NEXT)}
 					</NextButton>
 				)}
 				{activeStep === steps.length - 1 && (
@@ -178,7 +179,7 @@ const RegisterForm = () => {
 							setIsOpen(true)
 						}}
 					>
-						Submit
+						{I18n.t(SUBMIT)}
 					</SubmitButton>
 				)}
 			</ButtonGroup>

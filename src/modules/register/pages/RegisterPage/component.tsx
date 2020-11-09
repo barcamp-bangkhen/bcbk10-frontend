@@ -1,11 +1,13 @@
 import React from 'react'
 
 import ContentContainer from 'common/components/ContentContainer'
+import Flex from 'common/components/Flex'
 
 import RegisterForm from 'modules/register/components/RegisterForm'
-import Flex from 'common/components/Flex'
-import createMeta from './createMeta'
+
 import { StoreContextProvider } from '../../context/store'
+
+import createMeta from './createMeta'
 
 const RegisterPage = () => (
 	<StoreContextProvider>
