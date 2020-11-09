@@ -16,7 +16,8 @@ export const Circle = styled.span`
 	width: 25px;
 	background-color: #eee;
 	border-radius: 50%;
-	border: ${(props) => (props.error ? '2px dotted coral' : '')};
+	border: ${(props) => (props.error ? '1px solid coral' : '')};
+	transition: all 0.3s ease;
 
 	&:after {
 		content: '';

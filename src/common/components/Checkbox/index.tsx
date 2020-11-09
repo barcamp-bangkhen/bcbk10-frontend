@@ -8,6 +8,7 @@ export const Checkmark = styled.span`
 	width: 1.5625rem;
 	background-color: #eee;
 	border-radius: 0.3125rem;
+	transition: all 0.3s ease;
 
 	&:after {
 		content: '';

@@ -37,11 +37,7 @@ const Button = styled.button`
 	background: transparent;
 	border: 1px solid coral;
 	cursor: pointer;
-
-	&:hover {
-		background: black;
-		color: white;
-	}
+	transition: all 0.3s ease;
 
 	@media only screen and (max-width: 768px) {
 		width: 6rem;
@@ -73,6 +69,12 @@ const PreviousButton = styled(Button)`
 
 const SubmitButton = styled(Button)`
 	float: right;
+	color: coral;
+
+	&:hover {
+		background: #ff7f50;
+		color: white;
+	}
 `
 
 const ButtonGroup = styled.div`
