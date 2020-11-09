@@ -14,6 +14,7 @@ export const NavContainer = styled(Flex)`
 	@media screen and (max-width: 768px) {
 		width: 100vw;
 	}
+	background-color: #f4e9da;
 `
 
 export const NavWrapper = styled(Flex)``
@@ -31,7 +32,8 @@ export const NavLink = styled.a`
 	}
 	${props => props.className &&
 		css`
-			color: #da6353; ;
+			color: #da6353;
+			text-decoration: underline;
 		`}
 `
 export const Bars = styled(FaBars)`
