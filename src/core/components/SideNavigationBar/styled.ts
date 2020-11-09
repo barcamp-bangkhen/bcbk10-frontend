@@ -60,7 +60,10 @@ export const Icon = styled.div`
 `
 
 export const Lang = styled.div`
-	display: flex;
-	justify-content: space-evenly;
+	display: inline-flex;
+	justify-content: space-around;
 	cursor: pointer;
+	width: 20%;
+	height: auto;
+	margin: 0 auto;
 `
