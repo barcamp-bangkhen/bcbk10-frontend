@@ -17,6 +17,7 @@ export const NavWrapper = styled(Flex)``
 
 export const NavLink = styled.a`
 	color: #433f4f;
+	font-size:26px;
 	&:hover {
 		color: #da6353;
 	}

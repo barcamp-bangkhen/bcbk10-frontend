@@ -14,7 +14,7 @@ const EventDetail = () => {
 	const I18n = useI18n()
 
 	return (
-		<div style={{border: "1px solid black;"}}>
+		// <div style={{border: "1px solid black;"}}>
 			<Container>
 			<Flex alignItems='center' justifyContent='center' direction='column'>
 				<Gap size =' 36px' type='vertical' justifyCenter > 
@@ -33,7 +33,7 @@ const EventDetail = () => {
 				</Gap>
 			</Flex>
 			</Container>
-		</div>
+		// </div>
 	)
 }
 

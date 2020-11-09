@@ -15,7 +15,7 @@ import { MapDiv } from './styled'
 const Map = () => {
 	const I18n = useI18n()
 	return (
-		<div style={{border: "1px solid black;"}}>
+		// <div style={{border: "1px solid black;"}}>
 		<Container>
 		<TitleText>{I18n.t(LOCATION_TITLE)}</TitleText>
 		<Gap size="40px" type="vertical">
@@ -25,7 +25,7 @@ const Map = () => {
 			</Flex>
 		</Gap>
 		</Container>
-		</div>
+		// </div>
 	)
 }
 

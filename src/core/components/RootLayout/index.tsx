@@ -53,10 +53,8 @@ const RootLayout = ({ children }: Props) => {
 
         <GlobalStyle />
         <Background/>
-        <div style={{border: "1px solid red;"}}>
         <SideNavigationBar toggle={toggle} isOpen={toggle.isOpen}  /> 
         <NavigationBar toggle={toggle}/>
-        </div>
         {children}
         {/* </Background> */}
       </div>

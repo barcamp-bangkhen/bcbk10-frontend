@@ -16,7 +16,7 @@ const Sponsor = () => {
 	const I18n = useI18n()
 
 	return (
-		<div style={{border: "1px solid black;"}}>
+		// <div style={{border: "1px solid black;"}}>
 			<Container>
 			<TitleText>
 				{I18n.t(SPONSOR_TITLE)}
@@ -40,7 +40,7 @@ const Sponsor = () => {
 				</Gap>
 			</Flex>
 			</Container>
-		</div>
+		// </div>
 	)
 }
 

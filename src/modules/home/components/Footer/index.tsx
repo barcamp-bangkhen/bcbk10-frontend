@@ -10,15 +10,15 @@ import Contact from 'modules/home/components/Contact'
 
 const Footer =() =>{
     return(
-        <Container>
-        {/* <div style={{border:"1px solid black"}}>  */}
+        // <Container>
+        // {/* <div style={{border:"1px solid black"}}>  */}
             <Flex alignItems='center' justifyContent='space-between' direction='row'>
                     <Contact/>
                     <FireIcon/>
                     @barcamp2020
             </Flex>
-        {/* </div> */}
-        </Container> 
+        // {/* </div> */}
+        // {/* </Container>  */}
     )
 }
 
