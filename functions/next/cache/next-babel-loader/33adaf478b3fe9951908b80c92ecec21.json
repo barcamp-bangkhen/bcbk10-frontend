@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default } from 'modules/home/pages/HomePage';","map":{"version":3,"sources":["/Users/nicenicegame/Desktop/nice-workspace/bcbk2020-frontend/pages/home/index.ts"],"names":["default"],"mappings":"AAAA,SAASA,OAAT,QAAwB,6BAAxB","sourcesContent":["export { default } from 'modules/home/pages/HomePage'\n"]},"metadata":{},"sourceType":"module"}

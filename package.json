@@ -19,6 +19,7 @@
     "@types/react": "^16.9.55",
     "@types/yup": "^0.29.9",
     "axios": "^0.21.0",
+    "babel-plugin-inline-react-svg": "^1.1.2",
     "hex-rgb": "^4.2.0",
     "intl-messageformat": "^9.3.12",
     "lodash": "^4.17.20",

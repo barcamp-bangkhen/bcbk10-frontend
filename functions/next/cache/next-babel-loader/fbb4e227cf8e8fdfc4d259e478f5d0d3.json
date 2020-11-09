@@ -1,0 +1,1 @@
+{"ast":null,"code":"var stores = {};\nexport default stores;","map":{"version":3,"sources":["/Users/nicenicegame/Desktop/nice-workspace/bcbk2020-frontend/src/stores/index.ts"],"names":["stores"],"mappings":"AAAA,IAAMA,MAAM,GAAG,EAAf;AAEA,eAAeA,MAAf","sourcesContent":["const stores = {}\n\nexport default stores\n"]},"metadata":{},"sourceType":"module"}

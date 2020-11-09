@@ -159,7 +159,6 @@ const RegisterForm = () => {
 					})}
 				</Stepper>
 				<Form>{getStepContent(activeStep)}</Form>
-				<ConfirmModal open={isOpen} onClose={() => setIsOpen(false)} onSubmit={submitForm} />
 			</Card>
 			<ButtonGroup>
 				<PreviousButton
@@ -183,6 +182,7 @@ const RegisterForm = () => {
 					</SubmitButton>
 				)}
 			</ButtonGroup>
+			<ConfirmModal open={isOpen} onClose={() => setIsOpen(false)} onSubmit={submitForm} />
 		</ContentContainer>
 	)
 }
