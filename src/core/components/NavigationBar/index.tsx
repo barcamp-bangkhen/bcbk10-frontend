@@ -43,7 +43,7 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 					</Link>
 				</MenuGap>
 
-				<Text as="div" size="14px" color={gray[700]} margin={'0px 20px 0px 0px'}>
+				<Text as="div" size="1.2vw" color={gray[700]} margin={'0px 20px 0px 0px'}>
 					<LangGap size="4px">
 						<Text onClick={setLocaleTH}>th</Text>
 						<div>|</div>
