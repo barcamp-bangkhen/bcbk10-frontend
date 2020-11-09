@@ -7,7 +7,7 @@ import Gap from 'common/components/Gap'
 export const NAV_BAR_HEIGHT = '64px'
 
 export const NavContainer = styled(Flex)`
-	width: 1920px;
+	width: 100vw;
 	height: ${NAV_BAR_HEIGHT};
 	position: fixed;
 	top: 0;
@@ -20,7 +20,7 @@ export const NavWrapper = styled(Flex)``
 
 export const NavLink = styled.a`
 	color: #433f4f;
-	font-size: 1.2vw;
+	font-size: 1.5vw;
 	&:hover {
 		color: #da6353;
 		text-decoration: underline;
