@@ -14,6 +14,7 @@ export const NavContainer = styled(Flex)`
 	@media screen and (max-width: 768px) {
 		width: 100vw;
 	}
+	background-color: #f4e9da;
 `
 
 export const NavWrapper = styled(Flex)``
@@ -25,20 +26,22 @@ export const NavLink = styled.a`
 		color: #da6353;
 		text-decoration: underline;
 	}
-	padding-top: 20px;
+
+	@media screen and (max-width: 1024px) {
+		font-size: 2.5vw;
+	}
 `
 export const Bars = styled(FaBars)`
 	display: none;
+	float: right;
+	font-size: 1.5rem;
 	color: black;
+	cursor: pointer;
 
 	@media screen and (max-width: 768px) {
-		display: block;
-		position: fixed;
-		top: 0;
+		display: inline;
+		position: absolute;
 		right: 0;
-		transform: translate(-100%, 75%);
-		font-size: 1.8rem;
-		cursor: pointer;
 	}
 `
 
@@ -50,5 +53,8 @@ export const MenuGap = styled(Gap)`
 export const LangGap = styled(Gap)`
 	@media screen and (max-width: 768px) {
 		display: none;
+	}
+	@media screen and (max-width: 1024px) {
+		font-size: 2vw;
 	}
 `

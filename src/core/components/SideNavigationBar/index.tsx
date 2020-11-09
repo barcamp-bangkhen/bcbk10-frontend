@@ -2,9 +2,11 @@ import React, { useCallback } from 'react'
 
 import Link from 'next/link'
 
+import useI18n from 'core/i18n/hooks/useI18n'
 import useSetLocale from 'core/i18n/hooks/useSetLocale'
 import { Locale } from 'core/i18n/types'
 
+import { TIME_TABLE, FAQS, SESSION, REGISTER } from './locales'
 import { CloseIcon, SideBarContainer, NavLink, SideBarMenu, Icon, Lang } from './styled'
 
 const SideNavigationBar = ({ toggle }: { toggle: any }) => {
@@ -18,6 +20,8 @@ const SideNavigationBar = ({ toggle }: { toggle: any }) => {
 		setLocale(Locale.en)
 	}, [setLocale])
 
+	const I18n = useI18n()
+
 	return (
 		<SideBarContainer isOpen={toggle.isOpen}>
 			<Icon>
@@ -25,16 +29,16 @@ const SideNavigationBar = ({ toggle }: { toggle: any }) => {
 			</Icon>
 			<SideBarMenu onClick={toggle.toggle}>
 				<Link href="/" passHref>
-					<NavLink>Timetable</NavLink>
+					<NavLink>{I18n.t(TIME_TABLE)}</NavLink>
 				</Link>
 				<Link href="/" passHref>
-					<NavLink>FAQS</NavLink>
+					<NavLink>{I18n.t(FAQS)}</NavLink>
 				</Link>
 				<Link href="/" passHref>
-					<NavLink>Session</NavLink>
+					<NavLink>{I18n.t(SESSION)}</NavLink>
 				</Link>
 				<Link href="/register" passHref>
-					<NavLink>Register</NavLink>
+					<NavLink>{I18n.t(REGISTER)}</NavLink>
 				</Link>
 			</SideBarMenu>
 			<Lang>
