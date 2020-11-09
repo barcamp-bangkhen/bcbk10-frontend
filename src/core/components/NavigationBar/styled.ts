@@ -11,15 +11,21 @@ export const NavContainer = styled(Flex)`
 	height: ${NAV_BAR_HEIGHT};
 	position: fixed;
 	top: 0;
+	@media screen and (max-width: 768px) {
+		width: 100vw;
+	}
 `
 
 export const NavWrapper = styled(Flex)``
 
 export const NavLink = styled.a`
 	color: #433f4f;
+	font-size: 1.2vw;
 	&:hover {
 		color: #da6353;
+		text-decoration: underline;
 	}
+	padding-top: 20px;
 `
 export const Bars = styled(FaBars)`
 	display: none;
