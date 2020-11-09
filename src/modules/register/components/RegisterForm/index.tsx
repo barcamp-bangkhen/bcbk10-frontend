@@ -1,12 +1,19 @@
 import React, { useState, useContext } from 'react'
 
 import { yupResolver } from '@hookform/resolvers/yup'
+import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import slugify from 'slugify'
 import styled from 'styled-components'
 
 import useI18n from 'core/i18n/hooks/useI18n'
 
+import {
+	ButtonGroup,
+	PreviousButton,
+	NextButton,
+	SubmitButton,
+} from 'common/components/ButtonGroup'
 import ContentContainer from 'common/components/ContentContainer'
 import Form from 'common/components/Form'
 import ProgressBar from 'common/components/ProgressBar'
@@ -16,6 +23,7 @@ import Text from 'common/components/Text'
 
 import { StoreContext } from '../../context/store'
 import Confirmation from '../Confirmation'
+import ConfirmModal from '../ConfirmModal'
 import Covid19 from '../Covid19'
 import { Covid19Data } from '../Covid19/Covid19Data'
 import covid19Schema from '../Covid19/covid19Schema'
@@ -28,64 +36,6 @@ import { UserInfoData } from '../UserInfo/UserInfoData'
 import userInfoSchema from '../UserInfo/userInfoSchema'
 
 import { FORM_TITLE } from './locales'
-
-const Button = styled.button`
-	font: inherit;
-	border-radius: 0.5rem;
-	padding: 0.5rem 1rem;
-	width: 10rem;
-	background: transparent;
-	border: 1px solid coral;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	@media only screen and (max-width: 768px) {
-		width: 6rem;
-		text-align: center;
-	}
-`
-
-const NextButton = styled(Button)`
-	float: right;
-	background: rgba(255, 127, 80, 0.2);
-	color: coral;
-
-	&:hover {
-		background: #ff7f50;
-		color: white;
-	}
-`
-
-const PreviousButton = styled(Button)`
-	background: rgba(255, 127, 80, 0.2);
-	color: coral;
-	visibility: ${(props) => props.visibility};
-
-	&:hover {
-		background: #ff7f50;
-		color: white;
-	}
-`
-
-const SubmitButton = styled(Button)`
-	float: right;
-	color: coral;
-
-	&:hover {
-		background: #ff7f50;
-		color: white;
-	}
-`
-
-const ButtonGroup = styled.div`
-	padding: 1rem 2rem;
-
-	@media only screen and (max-width: 768px) {
-		display: flex;
-		justify-content: space-between;
-		padding: 1rem 1rem;
-	}
-`
 
 const Card = styled.div`
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -105,6 +55,8 @@ const RegisterForm = () => {
 	const I18n = useI18n()
 
 	const { userInfo, covid19Info, eventInfo } = useContext(StoreContext)
+
+	const [isOpen, setIsOpen] = useState(false)
 
 	const [activeStep, setActiveStep] = useState(0)
 	const steps = getSteps()
@@ -167,15 +119,22 @@ const RegisterForm = () => {
 				})
 			}
 		}
-		console.log({
-			userInfo: userInfo[0],
-			covid19Info: covid19Info[0],
-			eventInfo: {
-				interestsTopic: interests,
-				shirt: eventInfo[0].shirt,
-				shirtSize: eventInfo[0].shirtSize,
-			},
-		})
+		axios
+			.post('http://localhost:1337/paticipants', {
+				userInfo: userInfo[0],
+				covid19Info: covid19Info[0],
+				eventInfo: {
+					interestsTopic: interests,
+					shirt: eventInfo[0].shirt,
+					shirtSize: eventInfo[0].shirtSize,
+				},
+			})
+			.then((response) => {
+				console.log(response)
+			})
+			.catch((error) => {
+				console.log(error)
+			})
 	}
 
 	let submitState = null
@@ -200,6 +159,7 @@ const RegisterForm = () => {
 					})}
 				</Stepper>
 				<Form>{getStepContent(activeStep)}</Form>
+				<ConfirmModal open={isOpen} onClose={() => setIsOpen(false)} onSubmit={submitForm} />
 			</Card>
 			<ButtonGroup>
 				<PreviousButton
@@ -214,7 +174,13 @@ const RegisterForm = () => {
 					</NextButton>
 				)}
 				{activeStep === steps.length - 1 && (
-					<SubmitButton onClick={submitForm}>Submit</SubmitButton>
+					<SubmitButton
+						onClick={() => {
+							setIsOpen(true)
+						}}
+					>
+						Submit
+					</SubmitButton>
 				)}
 			</ButtonGroup>
 		</ContentContainer>
