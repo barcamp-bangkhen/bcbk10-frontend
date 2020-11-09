@@ -25,5 +25,5 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules", "build", "public"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/**/*", "src/**/*"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/client/pages/**/*", "src/**/*", "next.config.js"]
 }

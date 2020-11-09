@@ -1,9 +1,7 @@
-import { useRouter } from 'next/router';
-
-import { LocaleType } from 'core/i18n/types';
+import { useLocaleContext } from 'core/i18n/context/LocaleContext'
 
 export default function useLocale() {
-  const router = useRouter();
+	const localeContext = useLocaleContext()
 
-  return router.locale as LocaleType;
+	return localeContext.locale
 }
