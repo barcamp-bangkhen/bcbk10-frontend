@@ -34,7 +34,7 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 		<NavWrapper justifyContent="center">
 			<NavContainer alignItems="center" justifyContent="space-between">
 				<BarCampIcon />
-				<Bars onClick={toggle.toggle} />
+				<Bars onClick={toggle.toggle} style={{paddingRight:"20px"}} />
 
 				<MenuGap size="6rem" alignCenter>
 					<Link href="/" passHref>

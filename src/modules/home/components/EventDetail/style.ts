@@ -21,7 +21,7 @@ export const Detail = styled.div`
   color: ${blue};
 
   /* border: 1px solid black; */
-
+  
   @media (max-width: 768px) {
 
     p {

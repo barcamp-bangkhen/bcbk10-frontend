@@ -1,13 +1,24 @@
 import React from 'react'
-import styled from 'styled-components'
-import {Back} from './styled'
+// import { injectGlobal } from 'styled-components'
+
+import {Back, BGWrapper} from './styled'
+import styled, { createGlobalStyle } from 'styled-components'
 
 
+export const Background = createGlobalStyle`
 
-const Background = () => {
-    return(
-        <Back/>
-    )
-}
+    body{
+        background-image: url('/static/images/Artwork/background/bg.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+`
+
+
+// const Background= () => {
+//     return(
+//         <Back/>
+//     )
+// }
 
 export default Background

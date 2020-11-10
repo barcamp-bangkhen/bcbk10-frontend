@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-const LEVEL_1_HEIGHT = '12vh' // 100px
-const LEVEL_2_HEIGHT = '15vh' // 120px
-const LEVEL_3_HEIGHT = '18vh' // 150px
+const LEVEL_1_HEIGHT = '12vw' // 100px
+const LEVEL_2_HEIGHT = '15vw' // 120px
+const LEVEL_3_HEIGHT = '18vw' // 150px
 
 const Logo = styled.div`
 	svg,
@@ -21,7 +21,7 @@ export const Level1Container = styled(Logo)`
 	img {
 		height: ${LEVEL_1_HEIGHT};
 		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 80px;
+			height: 20vw;
 		}
 		@media screen and (orientation:landscape) and (max-width: 768px){
 			height:100px;
@@ -34,7 +34,7 @@ export const Level2Container = styled(Logo)`
 	img {
 		height: ${LEVEL_2_HEIGHT};
 		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 85px;
+			height: 23vw;
 		}
 		@media screen and (orientation:landscape) and (max-width: 768px){
 			height:120px;
@@ -48,7 +48,7 @@ export const Level3Container = styled(Logo)`
 		height: ${LEVEL_3_HEIGHT};
 
 		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 90px;
+			height: 25vw;
 		}
 		@media screen and (orientation:landscape) and (max-width: 768px){
 			height:140px;

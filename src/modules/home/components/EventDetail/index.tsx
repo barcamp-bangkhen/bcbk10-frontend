@@ -8,30 +8,23 @@ import Gap from 'common/components/Gap'
 import Flex from 'common/components/Flex'
 import Text, {TitleText, ContentText} from 'common/components/Text'
 import {Container} from 'common/components/Container'
-import {DetailTitle, Detail} from './style';
-import {red, blue} from 'common/styles/colors'
+
 const EventDetail = () => {
 	const I18n = useI18n()
 
 	return (
 		// <div style={{border: "1px solid black;"}}>
 			<Container>
-			<Flex alignItems='center' justifyContent='center' direction='column'>
-				<Gap size =' 36px' type='vertical' justifyCenter > 
-					<Gap size = '10px' type='vertical'>
-						<TitleText>{I18n.t(EVENT_DETAIL_TITLE)}</TitleText>
-						{I18n.t(EVENT_DETAIL)}
-					</Gap>
-					<Gap size = '10px' type='vertical'>
-						<TitleText>	{I18n.t(PARTICIPANT_TITLE)} </TitleText>
-						{I18n.t(PARTICIPANTS_DETAIL)}
-					</Gap>
-					<Gap size = '10px' type='vertical'>
-						<TitleText>{I18n.t(REASONS_TO_COME_TITLE)}</TitleText>
-						{I18n.t(REASONS_TO_COME_DETAIL)}
-					</Gap>
-				</Gap>
+			{/* <div style={{border: "10px solid black;"}}> */}
+			<Flex alignItems='flex-start' justifyContent='flex-start' direction='column'>
+				<TitleText>{I18n.t(EVENT_DETAIL_TITLE)}</TitleText>
+				{I18n.t(EVENT_DETAIL)}
+				<TitleText>	{I18n.t(PARTICIPANT_TITLE)} </TitleText>
+				{I18n.t(PARTICIPANTS_DETAIL)}
+				<TitleText>{I18n.t(REASONS_TO_COME_TITLE)}</TitleText>
+				{I18n.t(REASONS_TO_COME_DETAIL)}
 			</Flex>
+			{/* </div> */}
 			</Container>
 		// </div>
 	)

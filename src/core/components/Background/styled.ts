@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+import Flex from 'common/components/Flex'
+
+export const BGWrapper = styled(Flex)``
+
 const Background1 = styled.div`
     background: 
         url('/static/images/Artwork/background/triangle.png'),
@@ -17,12 +21,13 @@ const Background1 = styled.div`
         url('/static/images/Artwork/background/bg.jpg');
 
     background-size: contain;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 `
 
-export const Back = styled.div`
-    background: url('/static/images/Artwork/background/bg.jpg');
+export const Back = styled.img`
+    content: url('/static/images/Artwork/background/bg.jpg');
     background-size: contain;
+    /* background-color: red; */
 `
 
 const Layer1 = styled.div`

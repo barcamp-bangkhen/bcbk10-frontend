@@ -18,27 +18,25 @@ const Sponsor = () => {
 	return (
 		// <div style={{border: "1px solid black;"}}>
 			<Container>
-			<TitleText>
-				{I18n.t(SPONSOR_TITLE)}
-			</TitleText>
-			<Flex alignItems='center' justifyContent="center" direction="column">
-				<Gap size="20px" type="vertical">
-					<Gap size="24px" type="vertical" alignCenter>
-						<Level3Container>
-							<img src="/static/images/lmwn.png" />
-							<img src="/static/images/line.svg" />
-						</Level3Container>
-						<Level2Container>
-							<img src="/static/images/lmwn.png" />
-							<img src="/static/images/line.svg" />
-						</Level2Container>
-						<Level1Container>
-							<img src="/static/images/lmwn.png" />
-							<img src="/static/images/line.svg" />
-						</Level1Container>
+				<TitleText> {I18n.t(SPONSOR_TITLE)} </TitleText>
+				<Flex alignItems='center' justifyContent="center" direction="column">
+					<Gap size="20px" type="vertical">
+						<Gap size="24px" type="vertical" alignCenter>
+							<Level3Container>
+								<img src="/static/images/lmwn.png" />
+								<img src="/static/images/line.svg" />
+							</Level3Container>
+							<Level2Container>
+								<img src="/static/images/lmwn.png" />
+								<img src="/static/images/line.svg" />
+							</Level2Container>
+							<Level1Container>
+								<img src="/static/images/lmwn.png" />
+								<img src="/static/images/line.svg" />
+							</Level1Container>
+						</Gap>
 					</Gap>
-				</Gap>
-			</Flex>
+				</Flex>
 			</Container>
 		// </div>
 	)

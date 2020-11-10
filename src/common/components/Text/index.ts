@@ -100,7 +100,9 @@ export const TitleText = styled(Text)`
   font-size: 36px;
   color:${red};
   /* border:1px solid black; */
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  
   @media (max-width: 768px) {
     font-size: 22px;
   }

@@ -1,11 +1,12 @@
 import React, { ReactNode, useState } from 'react'
 
 import Head from 'next/head'
+
 import { createGlobalStyle } from 'styled-components'
 
 import NavigationBar from 'core/components/NavigationBar'
 import SideNavigationBar from '../SideNavigationBar'
-
+import Footer from '../Footer'
 import Background from 'core/components/Background'
 
 import useToggle from 'common/hooks/useToggle'
@@ -50,13 +51,14 @@ const RootLayout = ({ children }: Props) => {
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
         <GlobalStyle />
-        <Background/>
         <SideNavigationBar toggle={toggle} isOpen={toggle.isOpen}  /> 
-        <NavigationBar toggle={toggle}/>
-        {children}
-        {/* </Background> */}
+        <NavigationBar toggle={toggle}/> 
+        <Background/>
+        {/* <div style = {{border:"5px solid black"}}> */}
+        {children}.
+        <Footer/>
+        {/* </div> */}
       </div>
     ) 
   }
