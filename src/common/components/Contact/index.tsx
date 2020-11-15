@@ -15,40 +15,23 @@ import MediaQuery, { useMediaQuery } from 'react-responsive'
 
 
 const ICON_SIZE = 50
-const MOBILE_ICON_SIZE = 20
 
 const Contact = () => {
-
-	const isDesktopOrMobile = useMediaQuery(
-		{ maxWidth: 768 },
-	 )
-
 	return (
-			<Flex alignItems='flex-start' justifyContent="center" direction='row'>
-						{/* <div style={{border:"1px solid black"}}>  */}
+			<Flex alignItems='center' justifyContent="center" direction='row'>
 				<Gap size="16px" type='horizontal'>
 					<Gap size="12px" justifyCenter>
-							<Link href={FACEBOOK_URL} passHref={true}>
-							{isDesktopOrMobile
-								?<FacebookIcon size={MOBILE_ICON_SIZE} cursor="pointer" />
-								: <FacebookIcon size ={ICON_SIZE} cursor="pointer"/>
-								}
-							</Link>
-							<Link href={IG_URL} passHref={true}>
-								{isDesktopOrMobile
-									?<InstagramIcon size={MOBILE_ICON_SIZE} cursor="pointer" />
-									:<InstagramIcon size={ICON_SIZE} cursor="pointer" />
-								}
-							</Link>
-							<Link href={TWITTER_URL} passHref={true}>
-								{isDesktopOrMobile
-									?<TwitterIcon size={MOBILE_ICON_SIZE} cursor="pointer" />
-									:<TwitterIcon size={ICON_SIZE} cursor="pointer" />
-								}
-							</Link>
+						<Link href={FACEBOOK_URL} passHref={true}>
+							<FacebookIcon size ={ICON_SIZE} cursor="pointer"/>
+						</Link>
+						<Link href={IG_URL} passHref={true}>
+							<InstagramIcon size={ICON_SIZE} cursor="pointer" />
+						</Link>
+						<Link href={TWITTER_URL} passHref={true}>
+							<TwitterIcon size={ICON_SIZE} cursor="pointer" />
+						</Link>
 					</Gap>
 				</Gap>
-				{/* </div> */}
 			</Flex>
 	)
 }

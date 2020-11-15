@@ -1,24 +1,42 @@
 import React from 'react'
 // import { injectGlobal } from 'styled-components'
 
-import {Back, BGWrapper} from './styled'
+import {Layer1, Layer2, Layer3, Layer4, Layer5, TopDot, LeftDot, RightDot} from './styled'
 import styled, { createGlobalStyle } from 'styled-components'
 
 
-export const Background = createGlobalStyle`
-
+const BG = createGlobalStyle`
     body{
         background-image: url('/static/images/Artwork/background/bg.jpg');
+        /* background-image: var(--layer-2); */
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment:  fixed;
     }
 `
+const BackgroundWrapper = styled.div`
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    z-index:-10;
+`
 
+const Background= () => {
+    return(
+        <BackgroundWrapper>
+            <RightDot/>
+            <LeftDot/>
+            <TopDot/>
+            <Layer5/>
+            <Layer4/>
+            <Layer3/>
+            <Layer2/>
+            <Layer1/>
+            <BG/>
+        </BackgroundWrapper>
 
-// const Background= () => {
-//     return(
-//         <Back/>
-//     )
-// }
+    )
+}
 
 export default Background

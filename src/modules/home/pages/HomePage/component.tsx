@@ -1,11 +1,9 @@
 import React from 'react'
 
 import ContentContainer from 'common/components/ContentContainer'
-import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
-import Text from 'common/components/Text'
-import { blue, black } from 'common/styles/colors'
 
+// import Container from 'common/components/Container'
 import EventDetail from 'modules/home/components/EventDetail'
 import Map from 'modules/home/components/Location'
 import RegisterSection from 'modules/home/components/RegisterSection'
@@ -16,11 +14,9 @@ import createMeta from './createMeta'
 const HomePage = () => (
 	<ContentContainer>
 		{createMeta()}
-		<Gap size="32px" type="vertical">
+		<Gap size="30vh" type="vertical">
 				<RegisterSection />
-				<Text color={blue}>
-					<EventDetail />
-				</Text>
+				<EventDetail />
 				<Map />
 				<Sponsor />
 		</Gap>

@@ -5,7 +5,7 @@ import useI18n from 'core/i18n/hooks/useI18n'
 import Gap from 'common/components/Gap'
 import Flex from 'common/components/Flex'
 import Text, {TitleText} from 'common/components/Text'
-import {Container} from 'common/components/Container'
+import Container from 'common/components/Container'
 
 import {red} from 'common/styles/colors'
 

@@ -10,8 +10,8 @@ import { Container } from './styled'
 const RegisterSection = () => (
 	<Container>
 		<Flex alignItems="center" justifyContent="center" direction="column">
-				<HomeIcon/> 
-				<Button>REGISTER NOW</Button>
+			<HomeIcon/> 
+			<Button>REGISTER NOW</Button>
 		</Flex>
 	</Container>
 

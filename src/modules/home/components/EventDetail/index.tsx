@@ -3,11 +3,9 @@ import React from 'react'
 import useI18n from 'core/i18n/hooks/useI18n'
 
 import { EVENT_DETAIL_TITLE, EVENT_DETAIL, PARTICIPANT_TITLE, PARTICIPANTS_DETAIL, REASONS_TO_COME_TITLE, REASONS_TO_COME_DETAIL } from './locales'
-// import Flex from 'common/components/Flex'
-import Gap from 'common/components/Gap'
 import Flex from 'common/components/Flex'
-import Text, {TitleText, ContentText} from 'common/components/Text'
-import {Container} from 'common/components/Container'
+import {TitleText} from 'common/components/Text'
+import Container from 'common/components/Container'
 
 const EventDetail = () => {
 	const I18n = useI18n()

@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		font-family: 'Kanit', 'Roboto', sans-serif;
 		color: #404040;
+    
 	}
 
 	a {
@@ -55,10 +56,8 @@ const RootLayout = ({ children }: Props) => {
         <SideNavigationBar toggle={toggle} isOpen={toggle.isOpen}  /> 
         <NavigationBar toggle={toggle}/> 
         <Background/>
-        {/* <div style = {{border:"5px solid black"}}> */}
-        {children}.
+        {children}
         <Footer/>
-        {/* </div> */}
       </div>
     ) 
   }
