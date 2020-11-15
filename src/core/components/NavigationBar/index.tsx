@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -12,7 +12,7 @@ import { gray } from 'common/styles/colors'
 
 import BarCampIcon from '../../../common/components/icons/BarCampIcon'
 
-import { TIME_TABLE, FAQS, SESSION, REGISTER } from './locales'
+import { TIME_TABLE, FAQS, SESSION } from './locales'
 import { Bars, NavContainer, NavLink, NavWrapper, MenuGap, LangGap } from './styled'
 
 const NavigationBar = ({ toggle }: { toggle: any }) => {
@@ -30,15 +30,37 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 
 	const router = useRouter()
 
+	const [scrollState, setScrollState] = useState(false)
+
+	const changeBG = () => {
+		if (window.scrollY >= 80) {
+			setScrollState(false)
+		} else {
+			setScrollState(true)
+		}
+	}
+
+	if (typeof window !== 'undefined') {
+		window.addEventListener('scroll', changeBG)
+	}
+
 	return (
 		<NavWrapper justifyContent="center">
-			<NavContainer alignItems="center" justifyContent="space-between">
-				<BarCampIcon />
-				<Bars onClick={toggle.toggle} style={{paddingRight:"20px"}} />
+			<NavContainer
+				alignItems="center"
+				justifyContent="space-between"
+				className={scrollState ? 'trans' : 'color'}
+			>
+				<Link href="/" passHref>
+					<a>
+						<BarCampIcon />
+					</a>
+				</Link>
+				<Bars onClick={toggle.toggle} style={{ paddingRight: '20px' }} />
 
 				<MenuGap size="6rem" alignCenter>
-					<Link href="/" passHref>
-						<NavLink className={router.pathname === '/' ? 'active' : ''}>
+					<Link href="/table" passHref>
+						<NavLink className={router.pathname === '/table' ? 'active' : ''}>
 							{I18n.t(TIME_TABLE)}
 						</NavLink>
 					</Link>
@@ -50,11 +72,6 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 					<Link href="/session" passHref>
 						<NavLink className={router.pathname === '/seesion' ? 'active' : ''}>
 							{I18n.t(SESSION)}
-						</NavLink>
-					</Link>
-					<Link href="/register" passHref>
-						<NavLink className={router.pathname === '/register' ? 'active' : ''}>
-							{I18n.t(REGISTER)}
 						</NavLink>
 					</Link>
 				</MenuGap>

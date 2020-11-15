@@ -23,6 +23,24 @@ export const CloseIcon = styled(FaTimes)`
 export const NavLink = styled.a`
 	color: #433f4f;
 	font-size: 1em;
+	position: relative;
+
+	&:after {
+		content: '';
+		width: 0%;
+		height: 6px;
+		background-color: #da6353;
+		border-radius: 2px;
+		position: absolute;
+		left: 0px;
+		bottom: -6px;
+		transition: width 0.5s ease-out;
+	}
+
+	&:hover&:after {
+		width: 100%;
+	}
+
 	&:hover {
 		color: #da6353;
 	}
