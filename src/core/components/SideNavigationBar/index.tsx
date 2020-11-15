@@ -6,7 +6,7 @@ import useI18n from 'core/i18n/hooks/useI18n'
 import useSetLocale from 'core/i18n/hooks/useSetLocale'
 import { Locale } from 'core/i18n/types'
 
-import { TIME_TABLE, FAQS, SESSION, REGISTER } from './locales'
+import { TIME_TABLE, FAQS, SESSION } from './locales'
 import { CloseIcon, SideBarContainer, NavLink, SideBarMenu, Icon, Lang } from './styled'
 
 const SideNavigationBar = ({ toggle }: { toggle: any }) => {
@@ -36,9 +36,6 @@ const SideNavigationBar = ({ toggle }: { toggle: any }) => {
 				</Link>
 				<Link href="/" passHref>
 					<NavLink>{I18n.t(SESSION)}</NavLink>
-				</Link>
-				<Link href="/register" passHref>
-					<NavLink>{I18n.t(REGISTER)}</NavLink>
 				</Link>
 			</SideBarMenu>
 			<Lang>

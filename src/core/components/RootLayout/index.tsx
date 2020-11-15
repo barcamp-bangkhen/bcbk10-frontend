@@ -1,15 +1,15 @@
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode } from 'react'
 
 import Head from 'next/head'
-
 import { createGlobalStyle } from 'styled-components'
 
-import NavigationBar from 'core/components/NavigationBar'
-import SideNavigationBar from '../SideNavigationBar'
-import Footer from '../Footer'
 import Background from 'core/components/Background'
+import NavigationBar from 'core/components/NavigationBar'
 
 import useToggle from 'common/hooks/useToggle'
+
+import Footer from '../Footer'
+import SideNavigationBar from '../SideNavigationBar'
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -27,10 +27,11 @@ const GlobalStyle = createGlobalStyle`
 	}
 `
 type Props = {
-  children: ReactNode
+	children: ReactNode
 }
 
 const RootLayout = ({ children }: Props) => {
+	const toggle = useToggle()
 
   const toggle = useToggle();
 
