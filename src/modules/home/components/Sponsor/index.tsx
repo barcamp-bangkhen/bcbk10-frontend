@@ -7,6 +7,8 @@ import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
 import { TitleText } from 'common/components/Text'
 
+import {whiteC} from 'common/styles/colors'
+
 import { SPONSOR_TITLE } from './locales'
 import { Level1Container, Level2Container, Level3Container } from './styled'
 

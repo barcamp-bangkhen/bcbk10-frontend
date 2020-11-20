@@ -15,9 +15,10 @@ import {
 	REASONS_TO_COME_DETAIL,
 } from './locales'
 
+import {useMediaQuery} from 'react-responsive'
+
 const EventDetail = () => {
 	const I18n = useI18n()
-
 	return (
 		// <div style={{border: "1px solid black;"}}>
 		<Container>
