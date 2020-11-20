@@ -6,7 +6,7 @@ import {white, black, red, whiteC  } from 'common/styles/colors'
 const Button = styled.button`
     cursor: pointer;
     border: 2px solid ${whiteC};
-    border-radius: 1.5rem ;
+    border-radius: 2rem ;
     padding: 0.5rem 2rem;
     border: 0 ;
     background-color: ${red};
@@ -17,7 +17,8 @@ const Button = styled.button`
     font-size: 24px;
     height: 4rem;
     outline:none;
-    margin:10px;
+    margin-bottom:50px;
+    margin-top: 50px;
     &:hover {
         background-color: ${whiteC};
         color: ${red};

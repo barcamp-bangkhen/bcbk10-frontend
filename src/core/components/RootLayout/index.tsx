@@ -56,7 +56,7 @@ const RootLayout = ({ children }: Props) => {
 			<NavigationBar toggle={toggle} />
 			<Background />
 			{children}
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	)
 }

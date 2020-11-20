@@ -28,13 +28,13 @@ const SideNavigationBar = ({ toggle }: { toggle: any }) => {
 				<CloseIcon onClick={toggle.toggle} />
 			</Icon>
 			<SideBarMenu onClick={toggle.toggle}>
-				<Link href="/" passHref>
+				<Link href="/timetable" passHref>
 					<NavLink>{I18n.t(TIME_TABLE)}</NavLink>
 				</Link>
-				<Link href="/" passHref>
+				<Link href="/faqs" passHref>
 					<NavLink>{I18n.t(FAQS)}</NavLink>
 				</Link>
-				<Link href="/" passHref>
+				<Link href="/session" passHref>
 					<NavLink>{I18n.t(SESSION)}</NavLink>
 				</Link>
 			</SideBarMenu>

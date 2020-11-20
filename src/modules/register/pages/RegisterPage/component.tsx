@@ -7,10 +7,10 @@ import RegisterForm from 'modules/register/components/RegisterForm'
 import createMeta from './createMeta'
 
 const RegisterPage = () => (
-    <ContentContainer>
-      {createMeta()}
-      <RegisterForm />
-    </ContentContainer>
-  )
+	<ContentContainer>
+		{createMeta()}
+		<RegisterForm />
+	</ContentContainer>
+)
 
 export default RegisterPage

@@ -10,9 +10,6 @@ import TwitterIcon from 'common/components/icons/TwitterIcon'
 import { FACEBOOK_URL, IG_URL, TWITTER_URL } from './constants'
 
 import Flex from 'common/components/Flex'
-import { media } from 'common/styles/utils/viewport'
-import MediaQuery, { useMediaQuery } from 'react-responsive'
-
 
 const ICON_SIZE = 50
 

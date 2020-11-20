@@ -7,9 +7,13 @@ import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
 import { TitleText } from 'common/components/Text'
 
+import {whiteC} from 'common/styles/colors'
+
 import { SPONSOR_TITLE } from './locales'
 import { Level1Container, Level2Container, Level3Container } from './styled'
 import axios from 'axios'
+
+
 
 
 const Sponsor = () => {
@@ -42,8 +46,7 @@ const Sponsor = () => {
 	}, [])
 
 	return (
-
-		<Container>
+		<Container id ="sponsor">
 			<TitleText> {I18n.t(SPONSOR_TITLE)} </TitleText>
 			<Flex alignItems="center" justifyContent="center" direction="column">
 				<Gap size="20px" type="vertical">
