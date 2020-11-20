@@ -14,8 +14,7 @@ import {
 	RightDot,
 	Sparkle,
 	Triangle,
-	LeftCircle,
-	RightCircle,
+
 } from './styled'
 
 
@@ -29,14 +28,15 @@ const Background = () => {
 	if(isMobile){
 		return(
 			<BackgroundWrapper>
+				<BG/>
 			</BackgroundWrapper>
 		)
 	}
 	return (
 
 		<BackgroundWrapper>
-			<RightCircle />
-			<LeftCircle />
+			{/* <RightCircle /> */}
+			{/* <LeftCircle /> */}
 			<Triangle />
 			<Sparkle />
 			<RightDot />

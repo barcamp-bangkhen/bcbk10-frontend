@@ -36,18 +36,19 @@ export const Layer1 = styled.img`
 	animation: fade 7s infinite ease-in-out;
 	@keyframes fade {
 		0% {
-			opacity: 1;
+			opacity: 100%;
 		}
 		50% {
 			opacity: 0;
 		}
-		100% {
-			opacity: 1;
+		80%{
+			opacity:100%;
+		}
+		100%{
+			opacity:100%;
 		}
 	}
-	@media screen and (max-width: 768px){
-		visibility:hidden;
-	}
+
 `
 export const Layer2 = styled.img`
 	content: url('/static/images/Artwork/background/layer2.png');
@@ -84,13 +85,13 @@ export const Layer3 = styled.img`
 	animation: fade 7s infinite ease-in-out;
 	@keyframes fade {
 		0% {
-			opacity: 1;
+			opacity: 1.0;
 		}
 		50% {
-			opacity: 0;
+			opacity: 0.0;
 		}
 		100% {
-			opacity: 1;
+			opacity: 1.0;
 		}
 	}
 
@@ -243,7 +244,7 @@ export const RightCircle = styled.img`
 	width: 100%;
 	z-index: -4;
 	left: 74rem;
-	animation: fade 7s infinite ease-in-out;
+	/* animation: fade 7s infinite ease-in-out; */
 	opacity:0.5;
 	@keyframes fade {
 		0% {
@@ -262,11 +263,11 @@ export const LeftCircle = styled.img`
 	content: url('/static/images/Artwork/background/left_circle.png');
 	position: absolute;
 	width: 100%;
-	z-index: -4;
+	z-index: -5;
 	bottom: 0px;
 	left: 20px;
 
-	animation: fade 7s infinite ease-in-out;
+	/* animation: fade 7s infinite ease-in-out; */
 	@keyframes fade {
 		0% {
 			opacity: 0.5;
