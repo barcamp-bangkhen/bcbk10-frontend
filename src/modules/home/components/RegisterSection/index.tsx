@@ -4,17 +4,16 @@ import Button from 'common/components/Button'
 import Flex from 'common/components/Flex'
 import HomeIcon from 'common/components/icons/HomeIcon'
 
-import { Container } from './styled'
+import LogoContainer  from './styled'
 
 
 const RegisterSection = () => (
-	<Container>
+	<LogoContainer>
 		<Flex alignItems="center" justifyContent="center" direction="column">
-			
 			<HomeIcon/> 
 			<Button>REGISTER NOW</Button>
 		</Flex>
-	</Container>
+	</LogoContainer>
 
 )
 

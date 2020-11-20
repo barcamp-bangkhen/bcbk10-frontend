@@ -11,12 +11,13 @@ import { SPONSOR_TITLE } from './locales'
 import { Level1Container, Level2Container, Level3Container } from './styled'
 
 
+
+
 const Sponsor = () => {
 	const I18n = useI18n()
 
 	return (
-
-		<Container>
+		<Container id ="sponsor">
 			<TitleText> {I18n.t(SPONSOR_TITLE)} </TitleText>
 			<Flex alignItems="center" justifyContent="center" direction="column">
 				<Gap size="20px" type="vertical">

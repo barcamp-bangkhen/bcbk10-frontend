@@ -2,8 +2,8 @@ import React from 'react'
 
 import useI18n from 'core/i18n/hooks/useI18n'
 
-import Container from 'common/components/Container'
 import Flex from 'common/components/Flex'
+
 
 import { TitleText } from '../../../../common/components/Text'
 
@@ -13,11 +13,11 @@ const ComingSoonDetail = () => {
 	const I18n = useI18n()
 
 	return (
-		<Container>
+
 			<Flex alignItems="flex-start" justifyContent="flex-start" direction="column">
 				<TitleText>{I18n.t(COMING_SOON)}</TitleText>
 			</Flex>
-		</Container>
+
 	)
 }
 

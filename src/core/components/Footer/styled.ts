@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import Flex from 'common/components/Flex'
 
 export const FooterContain = styled(Flex)`
-	padding: 15px 40px 0px 40px;
-	margin-bottom: 10px;
-
+	padding: 15px 40px 15px 40px;
+	height:8vh;
+	bottom: 0;
 	@media screen and (max-width: 768px) {
 		padding: 0px 10px 0px 10px;
-		margin-bottom: 10px;
+
+
 	}
 `
 export const LicenseContainer = styled.div`

@@ -32,10 +32,18 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 
 	const [scrollState, setScrollState] = useState(false)
 
+	// let sponsorPos = document.querySelector('#sponsor').getBoundingClientRect().top
+	
 	const changeBG = () => {
-		if (window.scrollY >= 80) {
+		// let scrollNow = document.body.scrollTop
+		// if(sponsorPos <= scrollNow){
+		// 	setScrollState(true)
+		// }
+		if (window.pageYOffset>= 80) {
 			setScrollState(false)
-		} else {
+		} 
+
+		else {
 			setScrollState(true)
 		}
 	}

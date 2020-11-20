@@ -4,18 +4,18 @@ import ComingSoonDetail from 'modules/comingsoon/components/ComingSoon'
 
 import Flex from '../../../../common/components/Flex'
 import HomeIcon from '../../../../common/components/icons/HomeIcon'
-import { Container } from '../../../home/components/RegisterSection/styled'
+import LogoContainer from 'modules/home/components/RegisterSection/styled'
 
 import createMeta from './createMeta'
 
 const ComingSoonPage = () => (
-	<Container>
+	<LogoContainer>
 		<Flex alignItems="center" justifyContent="center" direction="column">
 			{createMeta()}
 			<HomeIcon />
 			<ComingSoonDetail />
 		</Flex>
-	</Container>
+	</LogoContainer>
 )
 
 export default ComingSoonPage

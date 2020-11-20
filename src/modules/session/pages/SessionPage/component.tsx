@@ -1,13 +1,14 @@
 import React from 'react'
 
-import Container from '../../../../common/components/Container'
+
 import ComingSoonPage from '../../../comingsoon/pages/ComingSoonPage/component'
+import ContentContainer from 'common/components/ContentContainer'
 
 const SessionDetail = () => {
 	return (
-		<Container>
+		<ContentContainer>
 			<ComingSoonPage />
-		</Container>
+		</ContentContainer>
 	)
 }
 

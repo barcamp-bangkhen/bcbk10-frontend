@@ -1,8 +1,10 @@
 import styled from 'styled-components'
-
 const LEVEL_1_HEIGHT = '12vw' // 100px
 const LEVEL_2_HEIGHT = '15vw' // 120px
 const LEVEL_3_HEIGHT = '18vw' // 150px
+
+
+
 
 const Logo = styled.div`
 	svg,
@@ -12,7 +14,6 @@ const Logo = styled.div`
 		margin: auto;
 		margin-top: 1em;
 		padding-bottom: 2em;
-		border: 1px  solid black;
 	}
 `
 

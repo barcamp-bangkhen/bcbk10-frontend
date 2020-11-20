@@ -4,11 +4,12 @@ import styled, { css } from 'styled-components'
 import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
 
-export const NAV_BAR_HEIGHT = '72px'
+export const NAV_BAR_HEIGHT = '8vh'
 
 export const NavContainer = styled(Flex)`
 	width: 100vw;
-	height: ${NAV_BAR_HEIGHT};
+	min-height: ${NAV_BAR_HEIGHT};
+
 	position: fixed;
 	top: 0;
 	@media screen and (max-width: 768px) {
@@ -33,7 +34,7 @@ export const NavLink = styled.a`
 	color: #433f4f;
 	font-size: 1.5vw;
 	position: relative;
-
+	
 	&:after {
 		content: '';
 		width: 0%;
