@@ -59,18 +59,18 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 				<Bars onClick={toggle.toggle} style={{ paddingRight: '20px' }} />
 
 				<MenuGap size="6rem" alignCenter>
-					<Link href="/table" passHref>
-						<NavLink className={router.pathname === '/table' ? 'active' : ''}>
+					<Link href="/timetable" passHref>
+						<NavLink className={router.pathname === '/timetable' ? 'active' : ''}>
 							{I18n.t(TIME_TABLE)}
 						</NavLink>
 					</Link>
-					<Link href="/FAQS" passHref>
-						<NavLink className={router.pathname === '/FAQS' ? 'active' : ''}>
+					<Link href="/faqs" passHref>
+						<NavLink className={router.pathname === '/faqs' ? 'active' : ''}>
 							{I18n.t(FAQS)}
 						</NavLink>
 					</Link>
 					<Link href="/session" passHref>
-						<NavLink className={router.pathname === '/seesion' ? 'active' : ''}>
+						<NavLink className={router.pathname === '/session' ? 'active' : ''}>
 							{I18n.t(SESSION)}
 						</NavLink>
 					</Link>
