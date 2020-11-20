@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import {white, black, red, whiteC  } from 'common/styles/colors'
 
 
@@ -17,15 +17,16 @@ const Button = styled.button`
     font-size: 24px;
     height: 4rem;
     outline:none;
-
+    margin:10px;
     &:hover {
         background-color: ${whiteC};
         color: ${red};
     }
 
     @media screen and (max-width: 768px){
-        font-size: 1ch;
-        height: 2rem;
+        font-size: 16px;
+        height: 3rem;
+        width:70%;
     }
 
 `

@@ -10,11 +10,12 @@ import { TitleText } from 'common/components/Text'
 import { SPONSOR_TITLE } from './locales'
 import { Level1Container, Level2Container, Level3Container } from './styled'
 
+
 const Sponsor = () => {
 	const I18n = useI18n()
 
 	return (
-		// <div style={{border: "1px solid black;"}}>
+
 		<Container>
 			<TitleText> {I18n.t(SPONSOR_TITLE)} </TitleText>
 			<Flex alignItems="center" justifyContent="center" direction="column">
@@ -36,7 +37,6 @@ const Sponsor = () => {
 				</Gap>
 			</Flex>
 		</Container>
-		// </div>
 	)
 }
 

@@ -14,7 +14,7 @@ import createMeta from './createMeta'
 const HomePage = () => (
 	<ContentContainer>
 		{createMeta()}
-		<Gap size="30vh" type="vertical">
+		<Gap size="60px" type="vertical">
 				<RegisterSection />
 				<EventDetail />
 				<Map />
