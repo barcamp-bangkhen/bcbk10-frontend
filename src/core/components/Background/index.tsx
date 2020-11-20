@@ -44,7 +44,6 @@ const Background = () => {
 			<Sparkle />
 			<RightDot />
 			<LeftDot />
-			<TopDot />
 			<Layer5 />
 			<Layer4 />
 			<Layer3 />

@@ -134,7 +134,6 @@ export const TopDot = styled.img`
 export const LeftDot = styled.img`
 	content: url('/static/images/Artwork/background/left_dot.png');
 	position: absolute;
-	border: 1px solid black;
 	width: 100%;
 	z-index: 0;
 
@@ -179,6 +178,16 @@ export const Sparkle = styled.img`
 	position: absolute;
 	width: 100%;
 	z-index: -2;
+	animation: winkwup 10s infinite alternate ease-in-out;
+	@keyframes winkwup{
+		0%{
+			opacity:1;
+		}
+		100%{
+			opacity:0;
+		}
+	}
+
 `
 
 export const Triangle = styled.img`
