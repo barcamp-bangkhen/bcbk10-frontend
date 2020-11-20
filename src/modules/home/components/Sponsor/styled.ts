@@ -12,7 +12,6 @@ const Logo = styled.div`
 		margin: auto;
 		margin-top: 1em;
 		padding-bottom: 2em;
-		border: 1px  solid black;
 	}
 `
 
