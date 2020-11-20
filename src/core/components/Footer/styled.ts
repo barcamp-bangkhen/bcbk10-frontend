@@ -13,8 +13,7 @@ export const FooterContain = styled(Flex)`
 	}
 `
 export const LicenseContainer = styled.div`
-	/* border: 1px solid black; */
-	width: 10rem;
+	width: 12rem;
 	color: gray;
 	@media screen and (max-width: 768px) {
 		width: 5rem;

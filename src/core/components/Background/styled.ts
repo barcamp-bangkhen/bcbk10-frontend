@@ -41,14 +41,13 @@ export const Layer1 = styled.img`
 		50% {
 			opacity: 0;
 		}
-		80%{
-			opacity:100%;
-		}
 		100%{
 			opacity:100%;
 		}
 	}
-
+	@media screen and (max-width: 768px){
+		visibility:hidden;
+	}
 `
 export const Layer2 = styled.img`
 	content: url('/static/images/Artwork/background/layer2.png');
@@ -236,6 +235,9 @@ export const Triangle = styled.img`
 	content: url('/static/images/Artwork/background/triangle.png');
 	position: absolute;
 	z-index: -1;
+	@media screen and (max-width: 768px){
+		visibility:hidden;
+	}
 `
 
 export const RightCircle = styled.img`
@@ -256,6 +258,9 @@ export const RightCircle = styled.img`
 		100% {
 			opacity: 0.5;
 		}
+	}
+	@media screen and (max-width: 768px){
+		visibility:hidden;
 	}
 `
 
@@ -278,5 +283,8 @@ export const LeftCircle = styled.img`
 		100% {
 			opacity: 0.5;
 		}
+	}
+	@media screen and (max-width: 768px){
+		visibility:hidden;
 	}
 `

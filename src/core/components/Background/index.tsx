@@ -10,7 +10,6 @@ import {
 	Layer3,
 	Layer4,
 	Layer5,
-	LeftDot,
 	RightDot,
 	Sparkle,
 	Triangle,
@@ -21,17 +20,17 @@ import {
 
 
 const Background = () => {
-	const isMobile = useMediaQuery({
-		maxWidth:768
-	})
+	// const isMobile = useMediaQuery({
+	// 	maxWidth:768
+	// })
 
-	if(isMobile){
-		return(
-			<BackgroundWrapper>
-				<BG/>
-			</BackgroundWrapper>
-		)
-	}
+	// if(isMobile){
+	// 	return(
+	// 		<BackgroundWrapper>
+	// 			<BG />
+	// 		</BackgroundWrapper>
+	// 	)
+	// }
 	return (
 
 		<BackgroundWrapper>
