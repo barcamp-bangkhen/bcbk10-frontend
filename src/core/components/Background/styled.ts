@@ -8,6 +8,8 @@ body{
 	background-image: url('/static/images/Artwork/background/bg.jpg');
 	background-repeat: no-repeat;
 	background-attachment:  fixed;
+	height:100%;
+
 }
 `
 export const BackgroundWrapper = styled.div`
@@ -17,6 +19,7 @@ export const BackgroundWrapper = styled.div`
 	bottom: 0;
 	left: 0;
 	z-index: -10;
+	height:100%;
 
 `
 
