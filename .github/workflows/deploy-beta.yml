@@ -16,7 +16,7 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          NODE_ENV: production
+          NODE_ENV: beta
       - name: Archive Static-Dist
         uses: actions/upload-artifact@master
         with:
