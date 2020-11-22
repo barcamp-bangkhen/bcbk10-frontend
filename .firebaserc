@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "bcbk2020"
+  },
+  "targets": {
+    "bcbk2020": {
+      "hosting": {
+        "beta": [
+          "bcbk-beta"
+        ],
+        "production": [
+          "bcbk2020"
+        ]
+      }
+    }
   }
 }

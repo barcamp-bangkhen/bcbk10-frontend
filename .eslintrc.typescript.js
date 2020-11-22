@@ -203,7 +203,7 @@ module.exports = {
 		'jsx-a11y/anchor-is-valid': [0], // <a tag if has onClick -> <button
 		'jsx-a11y/click-events-have-key-events': [0], // if has onClick must have at least onKeyUp, onKeyDown, onKeyPress
 		'jsx-a11y/no-static-element-interactions': [0], // HTML elements with event handlers require a role={}
-		'jsx-a11y/alt-text': [1], // img elements must have an alt prop
+		'jsx-a11y/alt-text': [0],
 		'jsx-a11y/anchor-has-content': [0], // fail if <a><TextWrapper aria-hidden /></a>
 		'jsx-a11y/iframe-has-title': [1], // <iframe> elements must have a unique title property
 		'jsx-a11y/no-noninteractive-element-interactions': [0],

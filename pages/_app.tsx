@@ -4,19 +4,18 @@ import { Provider } from 'mobx-react'
 import { NextSeo } from 'next-seo'
 import App, { AppContext, AppProps } from 'next/app'
 
-import RootLayout from 'core/components/RootLayout'
+import LocaleProvider from 'core/i18n/components/LocaleProvider'
 import { DEFAULT_LOCALE, STORAGE_LOCALE_KEY } from 'core/i18n/constants'
-import useSetLocale from 'core/i18n/hooks/useSetLocale'
 import getLocalStorage from 'core/localStorage/getLocalStorage'
 import initializeStore from 'core/store/utils/initializeStore'
+
+import RootLayout from 'modules/root/components/RootLayout'
 
 interface Props {
 	stores: Record<string, any>
 }
 
 const MyApp = ({ Component, pageProps, stores }: AppProps & Props) => {
-	const setLocale = useSetLocale()
-
 	useEffect(() => {
 		const jssStyles = document.querySelector('#jss-server-side')
 		if (jssStyles && jssStyles.parentNode) jssStyles.parentNode.removeChild(jssStyles)
@@ -31,20 +30,18 @@ const MyApp = ({ Component, pageProps, stores }: AppProps & Props) => {
 	const locale = useMemo(() => {
 		const isServer = typeof window === 'undefined'
 
-		return isServer ? DEFAULT_LOCALE : getLocalStorage(STORAGE_LOCALE_KEY) || DEFAULT_LOCALE
+		return isServer ? DEFAULT_LOCALE : getLocalStorage(STORAGE_LOCALE_KEY)
 	}, [])
 
-	useEffect(() => {
-		setLocale(locale)
-	}, [locale])
-
 	return (
-		<Provider {...mobxStores}>
-			<RootLayout>
-				<NextSeo title="Barcamp Bangkhen" />
-				<Component {...pageProps} />
-			</RootLayout>
-		</Provider>
+		<LocaleProvider locale={locale}>
+			<Provider {...mobxStores}>
+				<RootLayout>
+					<NextSeo title="Barcamp Bangkhen" />
+					<Component {...pageProps} />
+				</RootLayout>
+			</Provider>
+		</LocaleProvider>
 	)
 }
 
@@ -58,6 +55,10 @@ MyApp.getInitialProps = async (ctx: AppContext & Props) => {
 		...appProps,
 		stores,
 	}
+}
+
+export function getServerSideProps() {
+	return { props: { locale: DEFAULT_LOCALE } }
 }
 
 export default MyApp

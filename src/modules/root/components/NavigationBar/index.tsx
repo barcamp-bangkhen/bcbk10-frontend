@@ -10,7 +10,7 @@ import { Locale } from 'core/i18n/types'
 import Text from 'common/components/Text'
 import { gray } from 'common/styles/colors'
 
-import BarCampIcon from '../../../common/components/icons/BarCampIcon'
+import BarCampIcon from '../../../../common/components/icons/BarCampIcon'
 
 import { TIME_TABLE, FAQS, SESSION } from './locales'
 import { Bars, NavContainer, NavLink, NavWrapper, MenuGap, LangGap } from './styled'
@@ -33,17 +33,15 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 	const [scrollState, setScrollState] = useState(false)
 
 	// let sponsorPos = document.querySelector('#sponsor').getBoundingClientRect().top
-	
+
 	const changeBG = () => {
 		// let scrollNow = document.body.scrollTop
 		// if(sponsorPos <= scrollNow){
 		// 	setScrollState(true)
 		// }
-		if (window.pageYOffset>= 80) {
+		if (window.pageYOffset >= 80) {
 			setScrollState(false)
-		} 
-
-		else {
+		} else {
 			setScrollState(true)
 		}
 	}

@@ -1,6 +1,6 @@
 {
 	"name": "barcamp-bangkhen-2020-frontend",
-	"version": "0.2.2",
+	"version": "0.3.1",
 	"private": true,
 	"main": "src/server/index.js",
 	"scripts": {
@@ -8,8 +8,10 @@
 		"build": "next build",
 		"start": "next start",
 		"release": "standard-version --no-verify",
-		"serve": "cross-env NODE_ENV=production firebase deploy --only functions,hosting",
+		"serve": "firebase deploy --only functions,hosting:production",
+		"serve-beta": "firebase deploy --only functions,hosting:beta",
 		"deploy": "yarn build && yarn serve",
+		"deploy-beta": "yarn build && yarn serve-beta",
 		"lint": "eslint --ext .tsx,.ts,.js src pages",
 		"lint:fix": "eslint --ext .tsx,.ts,.js src pages --fix"
 	},
@@ -28,7 +30,7 @@
 		"lodash": "^4.17.20",
 		"mobx": "^6.0.1",
 		"mobx-react": "^7.0.0",
-		"next": "10.0.0",
+		"next": "10.0.1",
 		"next-seo": "^4.14.1",
 		"qs": "^6.9.4",
 		"react": "17.0.1",
@@ -38,7 +40,7 @@
 		"react-responsive": "^8.1.0",
 		"standard-version": "^9.0.0",
 		"styled-components": "^5.2.0",
-		"typescript": "^4.0.5"
+		"typescript": "3.9.5"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.12.1",

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 const LogoContainer = styled.div`
 	margin-top: 8vh;
 	height: 92vh;
@@ -9,4 +8,3 @@ const LogoContainer = styled.div`
 	}
 `
 export default LogoContainer;
-

@@ -4,12 +4,12 @@ import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 
 import Background from 'core/components/Background'
-import NavigationBar from 'core/components/NavigationBar'
 
 import useToggle from 'common/hooks/useToggle'
 
-import Footer from '../Footer'
-import SideNavigationBar from '../SideNavigationBar'
+import NavigationBar from 'modules/root/components/NavigationBar'
+
+import SideNavigationBar from '../NavigationBar'
 
 const GlobalStyle = createGlobalStyle`
 	body {

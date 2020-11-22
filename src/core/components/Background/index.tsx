@@ -1,7 +1,5 @@
 import React from 'react'
 
-import {useMediaQuery} from 'react-responsive'
-
 import {
 	BG,
 	BackgroundWrapper,
@@ -15,9 +13,6 @@ import {
 	Triangle,
 
 } from './styled'
-
-
-
 
 const Background = () => {
 	// const isMobile = useMediaQuery({

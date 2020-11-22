@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.3.0...v0.3.1) (2020-11-22)
+
+
+### Features
+
+* set auto deploy ([9affa71](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/9affa71b468199a70715edd94af4f4e8225eac1a))
+
+## [0.3.0](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.3...v0.3.0) (2020-11-07)
+
+
+### Features
+
+* set new i18n ([cce4de1](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/cce4de13614c135af63d94ce68f6a11222b0aafe))
+
+
+### Bug Fixes
+
+* styled and node engine ([90f2a94](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/90f2a940a3aaa613225091be7ddb8ac826129d04))
+
+### [0.2.3](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.2...v0.2.3) (2020-11-06)
+
+
+### Features
+
+* set lint-stage ([e1257ac](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/e1257acf181dea803611bcf4f2ad094c31e3ea46))
+
+
+### Bug Fixes
+
+* move nav and rootLayout to root ([45b5d8f](https://github.com/barcamp-bangkhen/bcbk2020-frontend/commit/45b5d8f8637f016d7dba60bc7bd19e70c513d32f))
+
 ### [0.2.2](https://github.com/barcamp-bangkhen/bcbk2020-frontend/compare/v0.2.1...v0.2.2) (2020-11-04)
 
 
