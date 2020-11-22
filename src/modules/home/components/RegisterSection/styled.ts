@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
-import { NAV_BAR_HEIGHT } from 'modules/root/components/NavigationBar/styled'
-
-export const Container = styled.div`
-	// height: calc(100vh - ${NAV_BAR_HEIGHT}); optional
-	height: 400px;
+const LogoContainer = styled.div`
+	margin-top: 8vh;
+	height: 92vh;
+	@media screen and (max-width: 768px) {
+		height: 620px;
+	}
 `
+export default LogoContainer;

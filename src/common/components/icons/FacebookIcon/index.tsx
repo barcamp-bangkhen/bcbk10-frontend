@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styled from 'styled-components'
+
 import { IconProps } from '../types'
 
 const FacebookIcon = ({ size, ...props }: IconProps) => {
@@ -22,4 +24,13 @@ const FacebookIcon = ({ size, ...props }: IconProps) => {
 		</svg>
 	)
 }
-export default FacebookIcon
+
+const SFacebookIcon = styled(FacebookIcon)`
+	@media screen and (max-width: 768px){
+		height: 26px;
+		width: 26px;
+	
+	}
+`
+
+export default SFacebookIcon
