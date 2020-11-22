@@ -1,6 +1,6 @@
 {
 	"name": "barcamp-bangkhen-2020-frontend",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"private": true,
 	"main": "src/server/index.js",
 	"scripts": {
