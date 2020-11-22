@@ -9,7 +9,7 @@ import useToggle from 'common/hooks/useToggle'
 
 import NavigationBar from 'modules/root/components/NavigationBar'
 
-import SideNavigationBar from '../NavigationBar'
+import SideNavigationBar from '../SideNavigationBar'
 
 const GlobalStyle = createGlobalStyle`
 	body {
