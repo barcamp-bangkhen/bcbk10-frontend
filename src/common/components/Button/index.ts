@@ -19,6 +19,7 @@ const Button = styled.button`
     outline:none;
     margin-bottom:50px;
     margin-top: 50px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     &:hover {
         background-color: ${whiteC};
         color: ${red};

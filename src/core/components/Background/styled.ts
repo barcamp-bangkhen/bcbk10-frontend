@@ -5,7 +5,6 @@ import{ createGlobalStyle } from 'styled-components'
 
 export const BG = createGlobalStyle`
 body{
-	background-image: url('/static/images/Artwork/background/bg.jpg');
 	background-repeat: no-repeat;
 	background-attachment:  fixed;
 	background: rgb(255,255,255);
