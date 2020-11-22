@@ -1,7 +1,5 @@
 import React from 'react'
 
-import styled from 'styled-components'
-
 import { IconProps } from '../types'
 
 const TwitterIcon = ({ size, ...props }: IconProps) => {
@@ -24,12 +22,4 @@ const TwitterIcon = ({ size, ...props }: IconProps) => {
 	)
 }
 
-const STwitterIcon = styled(TwitterIcon)`
-	@media screen and (max-width:768px){
-		width: 26px;
-		height: 26px;
-		
-	}
-`
-
-export default STwitterIcon
+export default TwitterIcon

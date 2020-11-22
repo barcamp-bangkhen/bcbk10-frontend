@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import {red} from 'common/styles/colors'
 import { TextProps } from './types'
 
 export const ellipsisText = (line: number) => css`
@@ -94,20 +93,3 @@ const Text = styled.span<TextProps>`
 `
 
 export default Text
-
-export const TitleText = styled(Text)`
-  display: block;
-  font-size: 36px;
-  color:${red};
-  /* border:1px solid black; */
-  margin-bottom: 50px;
-  margin-top: 50px;
-  
-  @media (max-width: 768px) {
-    font-size: 22px;
-  }
-`
-export const ContentText = styled(Text)`
-
-
-`
