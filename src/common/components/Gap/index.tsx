@@ -43,7 +43,7 @@ const Gap = styled.div<GapProps>`
 	display: flex;
 	flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
 	${({ type = 'horizontal' }) => STYLE_MAPPER[type]};
-	${positionCenter};
+	${positionCenter}
 `
 
 export default Gap

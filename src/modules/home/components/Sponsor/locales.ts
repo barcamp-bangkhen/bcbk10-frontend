@@ -1,1 +1,1 @@
-export const SPONSOR_TITLE = ['ผู้สนับสนุน', 'SPONSORS']
+export const SPONSOR_TITLE = ['ผู้สนับสนุน', 'Sponsor']
