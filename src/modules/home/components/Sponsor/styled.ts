@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 const LEVEL_1_HEIGHT = '12vw' // 100px
 const LEVEL_2_HEIGHT = '15vw' // 120px
-const LEVEL_3_HEIGHT = '18vw' // 150px
+const LEVEL_3_HEIGHT = '25vw' // 150px
 
 
 
@@ -49,10 +49,10 @@ export const Level3Container = styled(Logo)`
 		height: ${LEVEL_3_HEIGHT};
 
 		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 32vw;
+			height: 50vw;
 		}
 		@media screen and (orientation:landscape) and (max-width: 768px){
-			height:140px;
+			height: 180px;
 		}
 
 	}

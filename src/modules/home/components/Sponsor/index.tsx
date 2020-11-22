@@ -27,15 +27,14 @@ const Sponsor = () => {
 
 	const mapDataToPictureUrl = (data: any, lvl: number) => {
 		return data.filter((d: any) => d.level == lvl).map((d: any) => {
-			return { url: d.picture[0].url, alt: d.name }
+			return { hash: d.picture[0].hash, alt: d.name }
 		}
 		)
 	}
 
 	useEffect(() => {
-		axios.get("http://localhost:1337/sponsors")
+		axios.get("https://barcamp-296415-fvdpzyll3a-de.a.run.app/sponsors")
 			.then((res) => {
-				console.log(res.data);
 				setSponsorPictureUrlL3(mapDataToPictureUrl(res.data, 3))
 				setSponsorPictureUrlL2(mapDataToPictureUrl(res.data, 2))
 				setSponsorPictureUrlL1(mapDataToPictureUrl(res.data, 1))
@@ -47,7 +46,7 @@ const Sponsor = () => {
 
 	return (
 		<Container id ="sponsor">
-			<TitleText> {I18n.t(SPONSOR_TITLE)} </TitleText>
+			<TitleText > {I18n.t(SPONSOR_TITLE)} </TitleText>
 			<Flex alignItems="center" justifyContent="center" direction="column">
 				<Gap size="20px" type="vertical">
 					<Gap size="24px" type="vertical" alignCenter>
@@ -55,7 +54,7 @@ const Sponsor = () => {
 							sponsorPictureUrlL3.map((pic: any) => {
 								return (
 									<Level3Container>
-										<img src={`http://localhost:1337${pic.url}`} alt={pic.alt} />
+										<img src={`https://barcamp-296415-fvdpzyll3a-de.a.run.app/uploads/large_${pic.hash}.png`} alt={pic.alt} />
 									</Level3Container>
 							
 								)
@@ -66,7 +65,7 @@ const Sponsor = () => {
 							sponsorPictureUrlL2.map((pic: any) => {
 								return (
 									<Level2Container>
-										<img src={`http://localhost:1337${pic.url}`} alt={pic.alt} />
+										<img src={`https://barcamp-296415-fvdpzyll3a-de.a.run.app/uploads/medium_${pic.hash}.png`} alt={pic.alt} />
 									</Level2Container>
 				
 								)
@@ -77,7 +76,7 @@ const Sponsor = () => {
 							sponsorPictureUrlL1.map((pic: any) => {
 								return (
 									<Level1Container>
-										<img src={`http://localhost:1337${pic.url}`} alt={pic.alt} />
+										<img src={`https://barcamp-296415-fvdpzyll3a-de.a.run.app/uploads/small_${pic.hash}.png`} alt={pic.alt} />
 									</Level1Container>
 
 								)
