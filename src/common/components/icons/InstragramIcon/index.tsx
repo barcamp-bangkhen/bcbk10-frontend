@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styled from 'styled-components'
+
 import { IconProps } from '../types'
 
 const InstagramIcon = ({ size, ...props }: IconProps) => {
@@ -52,4 +54,12 @@ const InstagramIcon = ({ size, ...props }: IconProps) => {
 		</svg>
 	)
 }
-export default InstagramIcon
+
+const SInstagramIcon = styled(InstagramIcon)`
+	@media screen and (max-width: 768px){
+		height: 26px;
+		width: 26px;
+	}
+`
+
+export default SInstagramIcon
