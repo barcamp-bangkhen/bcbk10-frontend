@@ -8,8 +8,10 @@
 		"build": "next build",
 		"start": "next start",
 		"release": "standard-version --no-verify",
-		"serve": "cross-env NODE_ENV=production firebase deploy --only functions,hosting",
+		"serve": "firebase deploy --only functions,hosting:production",
+		"serve-beta": "firebase deploy --only functions,hosting:beta",
 		"deploy": "yarn build && yarn serve",
+		"deploy-beta": "yarn build && yarn serve-beta",
 		"lint": "eslint --ext .tsx,.ts,.js src pages",
 		"lint:fix": "eslint --ext .tsx,.ts,.js src pages --fix"
 	},
