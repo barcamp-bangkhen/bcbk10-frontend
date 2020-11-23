@@ -18,7 +18,7 @@ import {
 const EventDetail = () => {
 	const I18n = useI18n()
 	return (
-		<Container>
+		<Container style={{height:"auto"}}>
 			<Flex alignItems="flex-start" justifyContent="flex-start" direction="column">
 				<TitleText>{I18n.t(EVENT_DETAIL_TITLE)}</TitleText>
 				{I18n.t(EVENT_DETAIL)}
