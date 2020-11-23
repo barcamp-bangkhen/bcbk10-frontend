@@ -28,9 +28,6 @@ Even if you have no idea about what to talk about, you can join other sessions a
 Our past sessions have many varieties, such as technology, food, sport, travel, business, photography and more!
 `
 
-const proposesThaiVer = ``
-const proposesEngVer = `BarCamp Bangkhen is a stage where speakers and listeners exchange their knowledge, opinions and experiences, of which the mostly opened sessions are focused on technologies.`
-
 export const EVENT_DETAIL = [detailThaiVer, detailEngVer]
 export const PARTICIPANTS_DETAIL = [participantThaiVer, participantsEngVer]
 export const REASONS_TO_COME_DETAIL = [reasonsToComeThaiVer, reasonsToComeEngVer]

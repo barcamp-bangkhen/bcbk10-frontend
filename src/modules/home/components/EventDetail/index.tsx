@@ -15,14 +15,10 @@ import {
 	REASONS_TO_COME_DETAIL,
 } from './locales'
 
-import {useMediaQuery} from 'react-responsive'
-
 const EventDetail = () => {
 	const I18n = useI18n()
 	return (
-		// <div style={{border: "1px solid black;"}}>
 		<Container>
-			{/* <div style={{border: "10px solid black;"}}> */}
 			<Flex alignItems="flex-start" justifyContent="flex-start" direction="column">
 				<TitleText>{I18n.t(EVENT_DETAIL_TITLE)}</TitleText>
 				{I18n.t(EVENT_DETAIL)}
@@ -31,9 +27,7 @@ const EventDetail = () => {
 				<TitleText>{I18n.t(REASONS_TO_COME_TITLE)}</TitleText>
 				{I18n.t(REASONS_TO_COME_DETAIL)}
 			</Flex>
-			{/* </div> */}
 		</Container>
-		// </div>
 	)
 }
 

@@ -3,11 +3,12 @@ import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 
-import Background from 'core/components/Background'
+import Background from '../Background'
 
 import useToggle from 'common/hooks/useToggle'
 
 import NavigationBar from 'modules/root/components/NavigationBar'
+
 
 import SideNavigationBar from '../SideNavigationBar'
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {white, black, red, whiteC  } from 'common/styles/colors'
+import {red, whiteC} from 'common/styles/colors'
 
 
 

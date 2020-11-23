@@ -1,4 +1,3 @@
-import {css} from 'styled-components'
 export const gray = {
 	100: '#F7F7F7', // white
 	200: '#E7E7E7', // white-gray
