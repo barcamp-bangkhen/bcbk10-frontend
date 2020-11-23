@@ -9,6 +9,7 @@ import { Locale } from 'core/i18n/types'
 import { TIME_TABLE, FAQS, SESSION } from './locales'
 import { CloseIcon, SideBarContainer, NavLink, SideBarMenu, Icon, Lang } from './styled'
 
+// const SideNavigationBar = (props: {toggle:any}) =>{
 const SideNavigationBar = ({ toggle }: { toggle: any }) => {
 	const setLocale = useSetLocale()
 
@@ -21,6 +22,8 @@ const SideNavigationBar = ({ toggle }: { toggle: any }) => {
 	}, [setLocale])
 
 	const I18n = useI18n()
+
+
 
 	return (
 		<SideBarContainer isOpen={toggle.isOpen}>
