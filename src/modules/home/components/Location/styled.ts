@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import Text from 'common/components/Text'
+
 export const MapDiv = styled.iframe`
 	width: 90%;
 	height: 70vh;
@@ -9,4 +11,9 @@ export const MapDiv = styled.iframe`
 		width: 100%;
 
 	}
+`
+
+export const locationText = styled(Text)`
+
+	
 `

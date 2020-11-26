@@ -5,13 +5,11 @@ import useI18n from 'core/i18n/hooks/useI18n'
 import Container from 'common/components/Container'
 import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
-import { TitleText } from 'common/components/Text'
+import Text, { TitleText } from 'common/components/Text'
 
-import { SPONSOR_TITLE } from './locales'
+import { SPONSOR_TITLE, CONTACT_FOR_SPONSOR, EMAIL } from './locales'
 import { Level1Container, Level2Container, Level3Container } from './styled'
 import axios from 'axios'
-
-
 
 
 const Sponsor = () => {
@@ -44,7 +42,7 @@ const Sponsor = () => {
 	}, [])
 
 	return (
-		<Container id ="sponsor">
+		<Container id ="sponsor" style={{height:"auto"}}>
 			<TitleText > {I18n.t(SPONSOR_TITLE)} </TitleText>
 			<Flex alignItems="center" justifyContent="center" direction="column">
 				<Gap size="20px" type="vertical">
@@ -55,35 +53,31 @@ const Sponsor = () => {
 									<Level3Container>
 										<img src={`${pic.format.large.url}`} alt={pic.alt} />
 									</Level3Container>
-							
 								)
 							})
 						}
-
 						{
 							sponsorPictureUrlL2.map((pic: any) => {
 								return (
 									<Level2Container>
 										<img src={`${pic.format.medium.url}`} alt={pic.alt} />
 									</Level2Container>
-				
 								)
 							})
 						}
-
 						{
 							sponsorPictureUrlL1.map((pic: any) => {
 								return (
 									<Level1Container>
 										<img src={`${pic.format.small.url}`} alt={pic.alt} />
 									</Level1Container>
-
 								)
 							})
 						}
-
 					</Gap>
 				</Gap>
+					<Text>{I18n.t(CONTACT_FOR_SPONSOR)}</Text>
+					<Text>{I18n.t(EMAIL)}</Text>
 			</Flex>
 		</Container>
 	)
