@@ -13,7 +13,7 @@ import { gray } from 'common/styles/colors'
 import BarCampIcon from '../../../../common/components/icons/BarCampIcon'
 
 import { TIME_TABLE, FAQS, SESSION } from './locales'
-import { Bars, NavContainer, NavLink, NavWrapper, MenuGap, LangGap } from './styled'
+import { Bars, NavContainer, NavLink, NavWrapper, NavItems, LangGap } from './styled'
 
 const NavigationBar = ({ toggle }: { toggle: any }) => {
 	const setLocale = useSetLocale()
@@ -65,7 +65,7 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 				</Link>
 				<Bars onClick={toggle.toggle} style={{ paddingRight: '20px' }} />
 
-				<div>
+				<NavItems>
 					<Link href="/timetable" passHref>
 						<NavLink className={router.pathname === '/timetable' ? 'active' : ''}>
 							{I18n.t(TIME_TABLE)}
@@ -81,7 +81,7 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 							{I18n.t(SESSION)}
 						</NavLink>
 					</Link>
-				</div>
+				</NavItems>
 
 				<Text as="div" size="1.2vw" color={gray[700]}>
 					<LangGap size="1.5vw">

@@ -4,21 +4,26 @@ import {orange} from 'common/styles/colors'
 import Flex from 'common/components/Flex'
 
 export const FooterContain = styled(Flex)`
-	padding: 15px 40px 15px 40px;
-	height:8vh;
-	bottom: 0;
-	background-color:${orange};
-	@media screen and (max-width: 768px) {
-		padding: 0px 10px 0px 10px;
-
-
-	}
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	background-color: ${orange};
 `
 export const LicenseContainer = styled.div`
-	width: 12rem;
+	flex-grow: 1;
 	color: gray;
 	@media screen and (max-width: 768px) {
-		width: 5rem;
 		font-size: 12px;
 	}
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+`
+
+export const FooterWrapper = styled.div`
+	width: 90%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 `

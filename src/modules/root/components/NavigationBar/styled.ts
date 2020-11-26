@@ -84,7 +84,7 @@ export const Bars = styled(FaBars)`
 	}
 `
 
-export const MenuGap = styled(Gap)`
+export const NavItems = styled(Gap)`
 	@media screen and (max-width: 768px) {
 		display: none;
 	}
