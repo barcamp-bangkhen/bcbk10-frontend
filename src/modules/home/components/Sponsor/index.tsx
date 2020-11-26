@@ -25,7 +25,7 @@ const Sponsor = () => {
 
 	const mapDataToPictureUrl = (data: any, lvl: number) => {
 		return data.filter((d: any) => d.level == lvl).map((d: any) => {
-			return { hash: d.picture[0].hash, alt: d.name }
+			return { format: d.picture[0].formats, alt: d.name }
 		}
 		)
 	}
@@ -33,6 +33,7 @@ const Sponsor = () => {
 	useEffect(() => {
 		axios.get("https://barcamp-296415-fvdpzyll3a-de.a.run.app/sponsors")
 			.then((res) => {
+				console.log(res.data)
 				setSponsorPictureUrlL3(mapDataToPictureUrl(res.data, 3))
 				setSponsorPictureUrlL2(mapDataToPictureUrl(res.data, 2))
 				setSponsorPictureUrlL1(mapDataToPictureUrl(res.data, 1))
@@ -52,7 +53,7 @@ const Sponsor = () => {
 							sponsorPictureUrlL3.map((pic: any) => {
 								return (
 									<Level3Container>
-										<img src={`https://barcamp-296415-fvdpzyll3a-de.a.run.app/uploads/large_${pic.hash}.png`} alt={pic.alt} />
+										<img src={`${pic.format.large.url}`} alt={pic.alt} />
 									</Level3Container>
 							
 								)
@@ -63,7 +64,7 @@ const Sponsor = () => {
 							sponsorPictureUrlL2.map((pic: any) => {
 								return (
 									<Level2Container>
-										<img src={`https://barcamp-296415-fvdpzyll3a-de.a.run.app/uploads/medium_${pic.hash}.png`} alt={pic.alt} />
+										<img src={`${pic.format.medium.url}`} alt={pic.alt} />
 									</Level2Container>
 				
 								)
@@ -74,7 +75,7 @@ const Sponsor = () => {
 							sponsorPictureUrlL1.map((pic: any) => {
 								return (
 									<Level1Container>
-										<img src={`https://barcamp-296415-fvdpzyll3a-de.a.run.app/uploads/small_${pic.hash}.png`} alt={pic.alt} />
+										<img src={`${pic.format.small.url}`} alt={pic.alt} />
 									</Level1Container>
 
 								)
