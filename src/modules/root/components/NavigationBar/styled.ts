@@ -7,15 +7,14 @@ import Gap from 'common/components/Gap'
 export const NAV_BAR_HEIGHT = '8vh'
 
 export const NavContainer = styled(Flex)`
-	width: 100vw;
+	width: 90%;
+	margin: auto;
+`
+export const NavWrapper = styled(Flex)`
 	min-height: ${NAV_BAR_HEIGHT};
-
 	position: fixed;
 	top: 0;
-	@media screen and (max-width: 768px) {
-		width: 100vw;
-		height: 64px;
-	}
+	width: 100vw;
 	${props => props.className === 'trans' &&
 		css`
 			background-color: transparent;
@@ -27,13 +26,11 @@ export const NavContainer = styled(Flex)`
 			-webkit-transition: background-color 1000ms linear;
 		`}
 `
-
-export const NavWrapper = styled(Flex)``
-
 export const NavLink = styled.a`
 	color: #433f4f;
 	font-size: 1.5vw;
 	position: relative;
+	margin: 0 3rem;
 	
 	&:after {
 		content: '';

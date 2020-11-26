@@ -51,11 +51,12 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 	}
 
 	return (
-		<NavWrapper justifyContent="center">
+		<NavWrapper 
+			alignItems="center"
+			className={scrollState ? 'trans' : 'color'}>
 			<NavContainer
 				alignItems="center"
 				justifyContent="space-between"
-				className={scrollState ? 'trans' : 'color'}
 			>
 				<Link href="/" passHref>
 					<a>
@@ -64,7 +65,7 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 				</Link>
 				<Bars onClick={toggle.toggle} style={{ paddingRight: '20px' }} />
 
-				<MenuGap size="6rem" alignCenter>
+				<div>
 					<Link href="/timetable" passHref>
 						<NavLink className={router.pathname === '/timetable' ? 'active' : ''}>
 							{I18n.t(TIME_TABLE)}
@@ -80,9 +81,9 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 							{I18n.t(SESSION)}
 						</NavLink>
 					</Link>
-				</MenuGap>
+				</div>
 
-				<Text as="div" size="1.2vw" color={gray[700]} margin={'0px 20px 0px 0px'}>
+				<Text as="div" size="1.2vw" color={gray[700]}>
 					<LangGap size="1.5vw">
 						<Text onClick={setLocaleEN}>
 							<img
