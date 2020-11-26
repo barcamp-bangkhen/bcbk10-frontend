@@ -1,10 +1,16 @@
 import styled from 'styled-components'
+import Container from 'common/components/Container'
+import {orange} from 'common/styles/colors'
+
 const LEVEL_1_HEIGHT = '12vw' // 100px
 const LEVEL_2_HEIGHT = '15vw' // 120px
 const LEVEL_3_HEIGHT = '25vw' // 150px
 
 
-
+export const SponsorsWrapper = styled(Container)`
+	background-color: ${orange};
+	height:auto;
+`
 
 const Logo = styled.div`
 	svg,

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 import useI18n from 'core/i18n/hooks/useI18n'
 
-import Container from 'common/components/Container'
 import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
 import Text, { TitleText } from 'common/components/Text'
 
+
 import { SPONSOR_TITLE, CONTACT_FOR_SPONSOR, EMAIL } from './locales'
-import { Level1Container, Level2Container, Level3Container } from './styled'
+import { Level1Container, Level2Container, Level3Container , SponsorsWrapper} from './styled'
 import axios from 'axios'
 
 
@@ -42,7 +42,7 @@ const Sponsor = () => {
 	}, [])
 
 	return (
-		<Container id ="sponsor" style={{height:"auto"}}>
+		<SponsorsWrapper id ="sponsor">
 			<TitleText > {I18n.t(SPONSOR_TITLE)} </TitleText>
 			<Flex alignItems="center" justifyContent="center" direction="column">
 				<Gap size="20px" type="vertical">
@@ -79,7 +79,7 @@ const Sponsor = () => {
 					<Text>{I18n.t(CONTACT_FOR_SPONSOR)}</Text>
 					<Text>{I18n.t(EMAIL)}</Text>
 			</Flex>
-		</Container>
+		</SponsorsWrapper>
 	)
 
 }
