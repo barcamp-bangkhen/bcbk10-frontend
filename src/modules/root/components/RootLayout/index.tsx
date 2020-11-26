@@ -13,13 +13,17 @@ import NavigationBar from 'modules/root/components/NavigationBar'
 import SideNavigationBar from '../SideNavigationBar'
 
 const GlobalStyle = createGlobalStyle`
+
+	html {
+		overflow-x: hidden;
+	}
 	body {
 		box-sizing: border-box;
 		padding: 0;
 		margin: 0;
 		font-family: 'Kanit', 'Roboto', sans-serif;
 		color: #404040;
-    
+		overflow-x: hidden;
 	}
 
 	a {

@@ -22,10 +22,6 @@ export const BackgroundWrapper = styled.div`
 
 `
 
-export const Back = styled.img`
-	content: url('/static/images/Artwork/background/bg.jpg');
-	background-size: contain;
-`
 
 export const Layer1 = styled.img`
 	content: url('/static/images/Artwork/background/layer1.png');

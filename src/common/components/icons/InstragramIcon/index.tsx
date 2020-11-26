@@ -1,4 +1,5 @@
 import React from 'react'
+import styled  from 'styled-components'
 
 import { IconProps } from '../types'
 
@@ -42,10 +43,20 @@ const InstagramIcon = ({ size, stopColor = '#E5E5E5', ...props }: Props) => {
 				>
 					<stop stopColor="#ED5C4D" />
 					<stop offset="1" stopColor={stopColor} />
+
 				</linearGradient>
+				<clipPath id="clip0">
+					<rect width="48" height="48" fill="white" />
+				</clipPath>
 			</defs>
 		</svg>
 	)
 }
 
-export default InstagramIcon
+const SInstagramIcon= styled(InstagramIcon)`
+	padding: 0 5px;
+	width:48px;
+	height:48px;
+
+`
+export default SInstagramIcon

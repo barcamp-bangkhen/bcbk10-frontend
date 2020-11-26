@@ -2,6 +2,8 @@ import React from 'react'
 
 import { IconProps } from '../types'
 
+import styled  from 'styled-components'
+
 interface Props extends IconProps {
 	stopColor?: string
 }
@@ -44,5 +46,11 @@ const FacebookIcon = ({ size, stopColor = '#ECD6C7', ...props }: Props) => {
 		</svg>
 	)
 }
+const SFacebookIcon = styled(FacebookIcon)`
+	padding: 0 5px;
+	width:48px;
+	height:48px;
 
-export default FacebookIcon
+`
+
+export default SFacebookIcon

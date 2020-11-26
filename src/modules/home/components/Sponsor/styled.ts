@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 import Container from 'common/components/Container'
+import Text from 'common/components/Text'
 import {orange} from 'common/styles/colors'
-
-const LEVEL_1_HEIGHT = '12vw' // 100px
-const LEVEL_2_HEIGHT = '15vw' // 120px
-const LEVEL_3_HEIGHT = '25vw' // 150px
 
 
 export const SponsorsWrapper = styled(Container)`
@@ -12,54 +9,69 @@ export const SponsorsWrapper = styled(Container)`
 	height:auto;
 `
 
-const Logo = styled.div`
-	svg,
-	img {
-		box-sizing: border-box;
-		padding: 16px 12px;
-		margin: auto;
-		margin-top: 1em;
-		padding-bottom: 2em;
-	}
+export const SponsorText = styled(Text)`
+	white-space:pre-line;
+`
+
+export const LogoWrapper1 = styled.div`
+	width:40%;
+	display:flex;
+	padding:20px;
+	justify-content: center;
+	align-items: center;
+	/* width:100%; */
+	svg,img {
+		 width: 100%;
+		 height:100%;
+
+	 }
+
+`
+export const LogoWrapper2 = styled.div`
+	width:30%;
+	display:flex;
+	padding:20px;
+	justify-content: center;
+	align-items: center;
+	/* width:100%; */
+	svg,img {
+		 width: 100%;
+		 height:100%;
+
+	 }
+
+`
+export const LogoWrapper3 = styled.div`
+	width:20%;
+	display:flex;
+	padding:20px;
+	justify-content: center;
+	align-items: center;
+	/* width:100%; */
+	svg,img {
+		 width: 100%;
+		 height:100%;
+
+	 }
+
+`
+
+export const Logo = styled.div`
+	overflow: hidden;
+	display: flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items: center;
+	margin: 1rem 0 ;
+
 `
 
 export const Level1Container = styled(Logo)`
-	svg,
-	img {
-		height: ${LEVEL_1_HEIGHT};
-		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 28vw;
-		}
-		@media screen and (orientation:landscape) and (max-width: 768px){
-			height:100px;
-		}
-	}
+
 `
 
 export const Level2Container = styled(Logo)`
-	svg,
-	img {
-		height: ${LEVEL_2_HEIGHT};
-		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 30vw;
-		}
-		@media screen and (orientation:landscape) and (max-width: 768px){
-			height:120px;
-		}
-	}
 `
 
 export const Level3Container = styled(Logo)`
-	svg,
-	img {
-		height: ${LEVEL_3_HEIGHT};
-
-		@media screen and (orientation:portrait) and (max-width: 768px) {
-			height: 50vw;
-		}
-		@media screen and (orientation:landscape) and (max-width: 768px){
-			height: 180px;
-		}
-
-	}
 `

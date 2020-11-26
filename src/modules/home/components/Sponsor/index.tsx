@@ -8,7 +8,7 @@ import Text, { TitleText } from 'common/components/Text'
 
 
 import { SPONSOR_TITLE, CONTACT_FOR_SPONSOR, EMAIL } from './locales'
-import { Level1Container, Level2Container, Level3Container , SponsorsWrapper} from './styled'
+import {SponsorsWrapper, SponsorText, LogoWrapper1, LogoWrapper2, LogoWrapper3, Logo} from './styled'
 import axios from 'axios'
 
 
@@ -23,7 +23,7 @@ const Sponsor = () => {
 
 	const mapDataToPictureUrl = (data: any, lvl: number) => {
 		return data.filter((d: any) => d.level == lvl).map((d: any) => {
-			return { format: d.picture[0].formats, alt: d.name }
+			return { formats: d.picture[0].formats, alt: d.name }
 		}
 		)
 	}
@@ -45,39 +45,44 @@ const Sponsor = () => {
 		<SponsorsWrapper id ="sponsor">
 			<TitleText > {I18n.t(SPONSOR_TITLE)} </TitleText>
 			<Flex alignItems="center" justifyContent="center" direction="column">
-				<Gap size="20px" type="vertical">
-					<Gap size="24px" type="vertical" alignCenter>
+						<Logo>
 						{
 							sponsorPictureUrlL3.map((pic: any) => {
 								return (
-									<Level3Container>
-										<img src={`${pic.format.large.url}`} alt={pic.alt} />
-									</Level3Container>
+										<LogoWrapper1>
+											<img src={`${pic.formats.large.url}`} alt={pic.alt} />
+										</LogoWrapper1>
 								)
 							})
 						}
+						</Logo>
+						<Logo>
 						{
 							sponsorPictureUrlL2.map((pic: any) => {
 								return (
-									<Level2Container>
-										<img src={`${pic.format.medium.url}`} alt={pic.alt} />
-									</Level2Container>
+									<LogoWrapper2>
+										<img src={`${pic.formats.medium.url}`} alt={pic.alt} />
+									</LogoWrapper2>
 								)
 							})
 						}
+						</Logo>
+						<Logo>
 						{
 							sponsorPictureUrlL1.map((pic: any) => {
 								return (
-									<Level1Container>
-										<img src={`${pic.format.small.url}`} alt={pic.alt} />
-									</Level1Container>
+									<LogoWrapper3>
+										<img src={`${pic.formats.small.url}`} alt={pic.alt} />
+									</LogoWrapper3>
 								)
 							})
 						}
-					</Gap>
-				</Gap>
-					<Text>{I18n.t(CONTACT_FOR_SPONSOR)}</Text>
-					<Text>{I18n.t(EMAIL)}</Text>
+						</Logo>
+
+					<SponsorText >{I18n.t(CONTACT_FOR_SPONSOR)}</SponsorText>
+					<SponsorText>{I18n.t(EMAIL)}</SponsorText>
+
+
 			</Flex>
 		</SponsorsWrapper>
 	)
