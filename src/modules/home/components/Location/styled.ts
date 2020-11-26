@@ -6,14 +6,10 @@ export const MapDiv = styled.iframe`
 	width: 90%;
 	height: 70vh;
 	border: none;
-	margin: 1em auto;
+	margin: 1rem auto;
+	margin-top : -2rem ;
 	@media screen and (max-width: 768px) {
 		width: 100%;
 
 	}
-`
-
-export const locationText = styled(Text)`
-
-	
 `

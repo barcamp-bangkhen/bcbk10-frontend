@@ -193,7 +193,8 @@ export const RightDot = styled.img`
 	content: url('/static/images/Artwork/background/right_dot.png');
 	position: absolute;
 	width: 100%;
-	z-index: 0;
+	z-index: -1;
+	top: 2rem;
 	animation: flashing 3s infinite ease-out;
 	@keyframes flashing {
 		0% {

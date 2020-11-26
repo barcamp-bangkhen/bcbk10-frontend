@@ -33,7 +33,7 @@ const Background = () => {
 			{/* <LeftCircle /> */}
 			<Triangle />
 			<Sparkle />
-			<RightDot />
+			{/* <RightDot /> */}
 			{/* <LeftDot /> */}
 			<Layer5 />
 			<Layer4 />
