@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import Button from 'common/components/Button'
+import Button from 'common/components/Button/index'
 import Flex from 'common/components/Flex'
 import HomeIcon from 'common/components/icons/HomeIcon'
 
