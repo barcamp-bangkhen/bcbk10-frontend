@@ -65,7 +65,7 @@ const NavigationBar = ({ toggle }: { toggle: any }) => {
 				</Link>
 				<Bars onClick={toggle.toggle} style={{ paddingRight: '20px' }} />
 
-				<NavItems>
+				<NavItems size = "0">
 					<Link href="/timetable" passHref>
 						<NavLink className={router.pathname === '/timetable' ? 'active' : ''}>
 							{I18n.t(TIME_TABLE)}

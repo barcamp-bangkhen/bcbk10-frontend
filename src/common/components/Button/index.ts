@@ -3,7 +3,7 @@ import {red, whiteC} from 'common/styles/colors'
 
 
 
-const Button = styled.button`
+const Button = styled.a`
     cursor: pointer;
     border: 2px solid ${whiteC};
     border-radius: 2rem ;
@@ -15,7 +15,7 @@ const Button = styled.button`
     text-transform:uppercase;
     font-weight:bold;
     font-size: 24px;
-    height: 4rem;
+    /* height: 4rem; */
     outline:none;
     margin-bottom:30px;
     margin-top: 50px;
@@ -27,8 +27,7 @@ const Button = styled.button`
 
     @media screen and (max-width: 768px){
         font-size: 16px;
-        height: 3rem;
-        width:70%;
+
     }
 
 `

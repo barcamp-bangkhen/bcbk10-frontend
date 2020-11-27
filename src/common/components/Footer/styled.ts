@@ -3,8 +3,11 @@ import styled from 'styled-components'
 import {orange} from 'common/styles/colors'
 import Flex from 'common/components/Flex'
 
-export const FooterContain = styled(Flex)`
+export const FooterContain = styled.div`
 	height: 10vh;
+	@media screen and (orientation: landscape){
+		height:20vh;
+	}
 	display: flex;
 	align-items: center;
 	background-color: ${orange};

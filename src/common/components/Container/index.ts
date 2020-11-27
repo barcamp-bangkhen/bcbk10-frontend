@@ -7,7 +7,7 @@ const Container = styled.div`
 	overflow: auto;
 	@media screen and (max-width: 768px) {
 		padding: 15px 40px 10px 40px;
-		font-size: 18px;
+		font-size: 1.1rem;
 		height:auto;
 	}
 `

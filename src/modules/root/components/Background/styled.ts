@@ -5,10 +5,7 @@ export const BG = createGlobalStyle`
 body{
 	background-repeat: no-repeat;
 	background-attachment:  fixed;
-	background: rgb(255,255,255);
-	background: linear-gradient(121deg, rgba(255,255,255,1) 0%, rgba(239,220,205,1) 14%, rgba(236,213,198,1) 100%);
 	height:100%;
-
 }
 `
 export const BackgroundWrapper = styled.div`
@@ -19,7 +16,7 @@ export const BackgroundWrapper = styled.div`
 	left: 0;
 	z-index: -10;
 	height:100%;
-
+	background: linear-gradient(121deg, rgba(255,255,255,1) 0%, rgba(239,220,205,1) 14%, rgba(236,213,198,1) 100%);
 `
 
 
