@@ -5,7 +5,7 @@ import Flex from 'common/components/Flex'
 
 export const FooterContain = styled.div`
 	height: 10vh;
-	@media screen and (orientation: landscape){
+	@media screen and (orientation: landscape) and (max-width:768px){
 		height:20vh;
 	}
 	display: flex;
